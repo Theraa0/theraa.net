@@ -55,7 +55,7 @@ table.header {
 	font-weight: 800;
 }
 table.header td.main {
-	font-size: 175%;
+	font-size: 150%;
 }
 table.header td.sub {
 	color: var(--color-accent);
