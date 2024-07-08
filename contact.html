@@ -4,6 +4,17 @@
 <link rel="stylesheet" href="style.css">
 <link rel="preload" href="fonts/webfonts/JetbrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="viewport" content="width=device-width">
+<style>
+.social-button a {
+	height: 3em;
+	margin-bottom: 1em;
+	border-radius: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid var(--color-link)
+}
+</style>
 </head>
 <body>
 	<table class="header">
@@ -34,13 +45,21 @@
 		</tr>
 	</table>
 	<div class="body-text">
-		<ul>
-			<li><a href="https://www.instagram.com/theraa.0">Instagram</a></li>
-			<li><a href="instagram.com/theraa.0">Bluesky</a></li>
-			<li><a href="instagram.com/theraa.0">Discord</a></li>
-			<li><a href="instagram.com/theraa.0">GitHub</a></li>
-			<li><a href="instagram.com/theraa.0">Youtube</a></li>
-		</ul>
+		<div class="social-button">
+			<a href="https://www.instagram.com/theraa.0">Instagram</a>
+		</div>
+		<div class="social-button">
+			<a href="https://bsky.app/profile/theraa0.bsky.social">Bluesky</a>
+		</div>
+		<div class="social-button">
+			<a href="https://www.discord.com/users/@theraa">Discord</a>
+		</div>
+		<div class="social-button">
+			<a href="https://github.com/Theraa0">GitHub</a>
+		</div>
+		<div class="social-button">
+			<a href="https://youtube.com/@theraaaa">Youtube</a>
+		</div>
 	</div>
 	<div class="footer center">
 		<p class="quote">insert smart quote here</p>
