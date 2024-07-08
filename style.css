@@ -43,6 +43,12 @@ a.active {
 	color: var(--color-main);
 	font-weight: 800;
 }
+p {
+	margin: 0;
+}
+p + p {
+	margin-top: 1em;
+}
 /* Header */
 table.header {
 	margin: 2em 0 0 2em;
@@ -56,7 +62,7 @@ table.header td.sub {
 }
 /* Tab Bar */
 table.tabs {
-	padding: 1em 0 1em 2em;
+	margin: 1em 0 1em 2em;
 	display: unset;
 }
 table.tabs td a {
@@ -70,22 +76,11 @@ table.tabs td a {
 }
 .body-text {
 	flex: 1;
-	margin: 0 4em;
+	margin: 1em 4em 0 4em;
 	max-width: calc(100% - 8em);
 }
 .center {
 	text-align: center;
-}
-.buttons {
-	display: flex;
-	flex-flow: row wrap;
-	column-gap: 10px;
-	margin-bottom: -10px;
-}
-.buttons a {
-	width: 88px;
-	height: 31px;
-	margin-bottom: 10px;
 }
 /* Footer */
 .footer {
