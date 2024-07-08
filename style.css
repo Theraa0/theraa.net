@@ -7,11 +7,6 @@
 	src: url(fonts/webfonts/JetBrainsMono-ExtraBold.woff2);
 	font-weight: 800;
 }
-@font-face {
-	font-family: jetBrainsMono;
-	src: url(fonts/webfonts/JetBrainsMono-Light.woff2);
-	font-weight: 300;
-}
 :root {
 	--color-main: black;
 	--color-accent: #888;
@@ -24,37 +19,18 @@
 		--color-background: black;
 	}
 }
-h1 {
-	font-weight: 800;
-}
 body {
+	font-size: 1em;
+	font-family: jetBrainsMono;
+	color: var(--color-main);
+	font-display: block;
 	background-color: var(--color-background);
 	margin: 0;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	font-family: jetBrainsMono;
-	color: var(--color-main);
 	tab-size: 4;
 	line-height: 1.25em;
- font-size: 2em;
-}
-table.header {
-	margin: 2em 0 0 2em;
-	font-weight: 800;
-}
-table.header td.main {
-	font-size: 175%;
-}
-table.header td.sub {
-	color: var(--color-accent);
-}
-table.tabs {
-	padding: 1em 0 1em 2em;
-	display: unset;
-}
-table.tabs td a {
-	margin: 0.25em 0.5em;
 }
 a {
   color: var(--color-link);
@@ -67,31 +43,59 @@ a.active {
 	color: var(--color-main);
 	font-weight: 800;
 }
+/* Header */
+table.header {
+	margin: 2em 0 0 2em;
+	font-weight: 800;
+}
+table.header td.main {
+	font-size: 175%;
+}
+table.header td.sub {
+	color: var(--color-accent);
+}
+/* Tab Bar */
+table.tabs {
+	padding: 1em 0 1em 2em;
+	display: unset;
+}
+table.tabs td a {
+	margin: 0.25em 0.5em;
+}
+/* Text Body */
 .ascii-art {
 	margin: 0;
 	text-align: center;
- font-size: 100%;
+	font-size: 100%;
 }
 .body-text {
- flex: 1;
+	flex: 1;
 	margin: 0 4em;
- max-width: calc(100%-8em);
+	max-width: calc(100% - 8em);
 }
-.footer {
+.center {
 	text-align: center;
+}
+.buttons {
+	display: flex;
+	flex-flow: row wrap;
+	column-gap: 10px;
+	margin-bottom: -10px;
+}
+.buttons a {
+	width: 88px;
+	height: 31px;
+	margin-bottom: 10px;
+}
+/* Footer */
+.footer {
 	color: var(--color-accent);
-	margin: 0 0 6em 0;
- max-width: calc(100%-8em);
+	max-width: calc(100% - 8em);
+	margin: 0 4em 4em 4em;
 }
 a.footer {
 	margin: 0 1em 0 0;
 }
 p.footer {
 	color: var(--color-accent);
-}
-.center {
-	text-align: center;
-}
-.button {
-	display: inline-block;
 }
