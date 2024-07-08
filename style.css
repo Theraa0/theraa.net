@@ -24,13 +24,6 @@
 		--color-background: black;
 	}
 }
-* {
-	font-size: 1em;
-	font-family: jetBrainsMono;
-	color: var(--color-main);
-	tab-size: 4;
-	line-height: 1.25em;
-}
 h1 {
 	font-weight: 800;
 }
@@ -40,27 +33,28 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
- font-size: 1em;
+	font-size: 1em;
+	font-family: jetBrainsMono;
+	color: var(--color-main);
+	tab-size: 4;
+	line-height: 1.25em;
 }
 table.header {
 	margin: 2em 0 0 2em;
 	font-weight: 800;
 }
 table.header td.main {
-	font-size: 5em;
+	font-size: 2em;
 }
-table.header td.sub span {
+table.header td.sub {
 	color: var(--color-accent);
- font-size: 3em;
 }
 table.tabs {
 	padding: 1em 0 1em 2em;
-	display: unset;
+	//display: unset;
 }
 table.tabs td a {
-	padding: 0.25em;
-	margin: 0 0.25em;
- font-size: 1em;
+	margin: 0.25em 0.5em;
 }
 a {
   color: var(--color-link);
@@ -80,17 +74,18 @@ a.active {
 .body-text {
  flex: 1;
 	margin: 0 4em;
- max-width: calc(100%-10em);
+ max-width: calc(100%-8em);
 }
 .footer {
 	text-align: center;
 	color: var(--color-accent);
 	margin: 0 0 6em 0;
+ max-width: calc(100%-8em);
 }
-.footer a {
+a.footer {
 	margin: 0 1em 0 0;
 }
-.footer p {
+p.footer {
 	color: var(--color-accent);
 }
 .center {
@@ -98,5 +93,4 @@ a.active {
 }
 .button {
 	display: inline-block;
-	margin: 0;
 }
