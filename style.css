@@ -25,7 +25,7 @@
 	}
 }
 h1 {
-	font-weight: 800;
+	//font-weight: 800;
 }
 body {
 	background-color: var(--color-background);
@@ -41,7 +41,7 @@ body {
 }
 table.header {
 	margin: 2em 0 0 2em;
-	font-weight: 800;
+	//font-weight: 800;
 }
 table.header td.main {
 	font-size: 2em;
@@ -51,7 +51,7 @@ table.header td.sub {
 }
 table.tabs {
 	padding: 1em 0 1em 2em;
-	//display: unset;
+	display: unset;
 }
 table.tabs td a {
 	margin: 0.25em 0.5em;
@@ -65,7 +65,7 @@ a:hover {
 }
 a.active {
 	color: var(--color-main);
-	font-weight: 800;
+	//font-weight: 800;
 }
 .ascii-art {
 	margin: 0;
