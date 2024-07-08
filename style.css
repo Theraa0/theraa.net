@@ -43,14 +43,16 @@ table.header {
 	//font-weight: 800;
 }
 table.header td.main {
-	font-size: 200%;
+	font-size: 2rem;
 }
 table.header td.sub {
 	color: var(--color-accent);
+ font-size: 1rem;
 }
 table.tabs {
 	padding: 1em 0 1em 2em;
 	display: unset;
+ font-size: 1rem;
 }
 table.tabs td a {
 	margin: 0.25em 0.5em;
