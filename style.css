@@ -25,7 +25,7 @@
 	}
 }
 * {
-	font-size: 0.95em;
+	font-size: 1em;
 	font-family: jetBrainsMono;
 	color: var(--color-main);
 	tab-size: 4;
@@ -72,15 +72,14 @@ a.active {
 }
 table.tabs td a.active {
 }
-.body-text {
-	flex: 1;
-}
 .ascii-art {
 	margin: 0;
 	text-align: center;
 }
 .body-text {
+ flex: 1;
 	margin: 0 4em;
+ width: calc(100%-8em);
 }
 .footer {
 	text-align: center;
