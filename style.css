@@ -33,7 +33,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	font-size: 1em;
 	font-family: jetBrainsMono;
 	color: var(--color-main);
 	tab-size: 4;
@@ -44,7 +43,7 @@ table.header {
 	//font-weight: 800;
 }
 table.header td.main {
-	font-size: 2em;
+	font-size: 200%;
 }
 table.header td.sub {
 	color: var(--color-accent);
