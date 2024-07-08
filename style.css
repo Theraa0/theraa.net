@@ -27,6 +27,9 @@
 h1 {
 	//font-weight: 800;
 }
+* {
+ text-size-adjust: none;
+}
 body {
 	background-color: var(--color-background);
 	margin: 0;
