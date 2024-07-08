@@ -37,6 +37,7 @@ body {
 	color: var(--color-main);
 	tab-size: 4;
 	line-height: 1.25em;
+ font-size: 2em;
 }
 table.header {
 	margin: 2em 0 0 2em;
