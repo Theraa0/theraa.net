@@ -93,9 +93,3 @@ table.tabs td a {
 	max-width: calc(100% - 8em);
 	margin: 0 4em 4em 4em;
 }
-a.footer {
-	margin: 0 1em 0 0;
-}
-p.footer {
-	color: var(--color-accent);
-}
