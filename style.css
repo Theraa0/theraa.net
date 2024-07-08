@@ -46,7 +46,7 @@ table.header {
 	font-weight: 800;
 }
 table.header td.main {
-	font-size: 1.75em;
+	font-size: 175%;
 }
 table.header td.sub span {
 	color: var(--color-accent);
@@ -70,8 +70,6 @@ a.active {
 	color: var(--color-main);
 	font-weight: 800;
 }
-table.tabs td a.active {
-}
 .ascii-art {
 	margin: 0;
 	text-align: center;
@@ -79,12 +77,12 @@ table.tabs td a.active {
 .body-text {
  flex: 1;
 	margin: 0 4em;
- width: calc(100%-8em);
+ max-width: calc(100%-10em);
 }
 .footer {
 	text-align: center;
 	color: var(--color-accent);
-	margin: 1em 0;
+	margin: 0 0 6em 0;
 }
 .footer a {
 	margin: 0 1em 0 0;
