@@ -49,6 +49,9 @@ p {
 p + p {
 	margin-top: 1em;
 }
+.center {
+	text-align: center;
+}
 /* Header */
 table.header {
 	margin: 2em 0 0 2em;
@@ -69,18 +72,11 @@ table.tabs td a {
 	margin: 0.25em 0.5em;
 }
 /* Text Body */
-.ascii-art {
-	margin: 0;
-	text-align: center;
-	font-size: 100%;
-}
 .body-text {
 	flex: 1;
-	margin: 1em 4em 0 4em;
-	max-width: calc(100% - 8em);
-}
-.center {
-	text-align: center;
+	margin: 1em auto 0 auto;
+	width: calc(100% - 8em);
+	max-width: 80ch;
 }
 /* Footer */
 .footer {
