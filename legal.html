@@ -1,44 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <link rel="stylesheet" href="style.css">
-<link rel="preload" href="fonts/webfonts/JetbrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<!-- replace this with ssi when thats possible -->
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+<script>
+$(function(){
+		$("#header").load("header.html", null, function(){
+			$.getScript("js/location.js")
+		}); 
+		$("#footer").load("footer.html", null, function(){
+			$.getScript("js/location.js")
+		}); 
+});
+</script>
+<!-- end of slow code -->
 </head>
 <body>
-	<table class="header">
-		<tr>
-			<td class="main">
-				<a href="home.html">theraa.net</a>
-				:
-				<span>legal</span>
-			</td>
-		</tr>
-		<tr>
-			<td class="sub">
-				<span>hello world</span>
-			</td>
-		</tr>
-	</table>
-	<table class="tabs">
-		<tr>
-			<td>
-				<a href="home.html">home</a>
-			</td>
-			<td>
-				<a href="blog.html">blog</a>
-			</td>
-			<td>
-				<a href="about.html">about</a>
-			</td>
-		</tr>
-	</table>
+	<header id="header"></header>
 	<div class="body-text">
 		<img src="resources/images/under_construction.png">
 	</div>
-	<div class="footer center">
-		<p class="quote">insert smart quote here</p>
-		(c) 2024 Rasmus Metzger <a class="active" href="legal.html">legal notice</a> <a href="privacy.html">data privacy</a> <a href="contact.html">contact</a>
-	</div>
+	<footer id="footer" class="footer center"></footer>
 </body>
 </html> 
