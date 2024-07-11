@@ -5,3 +5,4 @@ just my personal website
 - [ ] create the wall and similar
 - [ ] movies/books section?
 - [ ] make my ff startpage available?
+- [ ] now section on about page
