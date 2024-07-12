@@ -21,6 +21,15 @@ $(function(){
 		}); 
 });
 </script>
+<script>
+function scrollSmoothTo(elementId) {
+  var element = document.getElementById(elementId);
+  element.scrollIntoView({
+    block: 'start',
+    behavior: 'smooth'
+  });
+}
+</script>
 <!-- end of slow code -->
 <style>
 #now {
@@ -33,14 +42,14 @@ $(function(){
 }
 #now h2::before {
 	content: "";
-	width: 0.4em;
-	height: 0.4em;
+	width: 0.6em;
+	height: 0.6em;
 	background-color: var(--color-accent);
 	border-radius: 50%;
 	display: block;
 	position: absolute;
 	top: 0.4em;
-	left: -1.1em;
+	left: -1.2em;
 }
 article {
 	position: relative;
@@ -64,7 +73,7 @@ article:last-child::before {
 <body>
 	<header id="header"></header>
 	<main class="body-text">
-		<a href="#about">jump to about me</a>
+		<a onclick="scrollSmoothTo('about')">jump to about me</a>
 		<div id="now">
 			<article>
 				<h2>11.07.24, Amdavad</h2>
