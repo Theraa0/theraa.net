@@ -73,8 +73,15 @@ table.tabs td a {
 	margin: 0.25em 0.5em;
 }
 /* Text Body */
-.body-text, main {
+.body-text {
 	flex: 1;
+	margin: 1em auto;
+	width: calc(100% - 8em);
+	max-width: 80ch;
+}
+main {
+	display: flex;
+	color: green;
 	margin: 1em auto;
 	width: calc(100% - 8em);
 	max-width: 80ch;
