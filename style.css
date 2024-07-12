@@ -80,7 +80,6 @@ table.tabs td a {
 	max-width: 80ch;
 }
 main {
-	color: green;
 	margin: 1em auto;
 	width: calc(100% - 8em);
 	max-width: 80ch;
