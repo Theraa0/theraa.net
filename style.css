@@ -74,6 +74,7 @@ table.tabs td a {
 }
 /* Text Body */
 main {
+	display: block;
 	flex: 1;
 	margin: 1em auto;
 	width: calc(100% - 8em);
