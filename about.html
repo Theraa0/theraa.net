@@ -23,39 +23,42 @@ $(function(){
 </script>
 <!-- end of slow code -->
 <style>
-h2::after {
- content: "";
- width: 1em;
- height: 1em;
- background-color: red;
- border-radius: 50%;
- left: -1em;
- display: block;
- position: relative;
- left: -1.5em;
+h2::before {
+	content: "";
+	width: 0.4em;
+	height: 0.4em;
+	background-color: var(--color-accent);
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	bottom: 0.2em;
+	left: -0.925em;
 }
-article {
- padding-left: 1em;
- border-left: 0.2em solid var(--color-accent);
+#now {
+	padding-left: 1em;
+	border-left: 0.2em solid var(--color-accent);
+	&:last-child {
+	
+	}
 }
 </style>
 </head>
 <body>
 	<header id="header"></header>
 	<main class="body-text">
-  <a href="#about">jump to about me</a>
-  <div id="now">
-   <article>
-    <h2>11.07.24, Amdavad</h2>
-    <p>I applied to the University of Cologne for a Bachelor in Physics today! I dont have anything figured out really but I've been thinking about this decision for over a year now</p>
-  </article>
- </div>
- <div id="about">
-   <h1>about</h1>
-   <p>hi i'm rasmus aka thera online. i was born in 2005, grew up in münster, germany and am currently doing a voluntary service in gujarat, india </p>
-	 	<p>i like skating, reading, art but always try to do new things (like this stupid website, why is everything such a pain with html?)</p>
-  </div>
- </main>
+		<a href="#about">jump to about me</a>
+		<div id="now">
+			<article>
+				<h2>11.07.24, Amdavad</h2>
+				<p>I applied to the University of Cologne for a Bachelor in Physics today! I dont have anything figured out really but I've been thinking about this decision for over a year now</p>
+			</article>
+		</div>
+		<div id="about">
+			<h1>about</h1>
+			<p>hi i'm rasmus aka thera online. i was born in 2005, grew up in münster, germany and am currently doing a voluntary service in gujarat, india </p>
+			<p>i like skating, reading, art but always try to do new things (like this stupid website, why is everything such a pain with html?)</p>
+		</div>
+	</main>
 	<footer id="footer" class="footer center"></footer>
 </body>
 </html> 
