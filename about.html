@@ -23,42 +23,10 @@ $(function(){
 </script>
 <!-- end of slow code -->
 <style>
-.now, .now:before, .now:after {
- box-sizing: border-box
-}
-article {
- display: flex;
- padding-left: 2em;
-}
-article:last-child {
- border: 0;
-}
-article p:nth-child(1) {
-  padding-left: 2em;
-  color: yellow;
-}
-article p:nth-child(1):after {
-  content: '';
-  position: absolute;
-  top: 28px;
-  right: -12px;
-  display: block;
-  width: 1em;
-  height: 1em;
-  border: 5px solid green;
-  border-radius: 50%;
-  background: green;
-}
-article:first-child p:nth-child(1):after {
-  background: blue;
-}
 article p:nth-child(2) {
-  flex: 1;
-  border-left: 5px solid red;
-}
-article p span {
-  display: block;
-  margin: 5px 0 0;
+ flex: 1;
+ margin-right: 2em;
+ border-left: 5px solid red;
 }
 </style>
 </head>
