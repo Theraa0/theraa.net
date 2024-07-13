@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/layout.astro'
+import '../styles/timeline.css'
+---
+<Layout title="about">
+	<a onclick="document.getElementById('aboutMe').scrollIntoView({behavior: 'smooth'})">jump to about me</a>
+	<div id="now">
+		<h1>now</h1>
+		<article>
+			<h2>11.07.24, Amdavad</h2>
+			<p>I applied to the University of Cologne for a Bachelor in Physics today! I dont have anything figured out really but I've been thinking about this decision for over a year now</p>
+		</article>
+		<article>
+			<h2>??.07.24, Amdavad</h2>
+			<p>A short while ago i got this idea that i had to have a website... Don't ask me why but a few days later I'm sitting here suffering with html, looking around different blogs for inspiration and one Idea i quite liked with this: a now section, where I'll hopefully do some updates on my life just in case you're curios whats going on but don't want to ask me for whatever reason</p>
+		</article>
+	</div>
+	<div id="aboutMe">
+		<h1>about</h1>
+		<p>hi i'm rasmus aka thera online. i was born in 2005, grew up in münster, germany and am currently doing a voluntary service in gujarat, india </p>
+		<p>i like skating, reading, art but always try to do new things (like this stupid website, why is everything such a pain with html?)</p>
+	</div>
+</Layout>

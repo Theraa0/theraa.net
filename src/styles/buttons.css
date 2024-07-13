@@ -1,0 +1,18 @@
+.buttons {
+	display: flex;
+	flex-flow: row wrap;
+	column-gap: 10px;
+	margin-bottom: calc(-10px + 1em);
+	justify-content: center;
+	align-items: center;
+}
+.buttons a {
+	width: 88px;
+	height: 31px;
+	margin-top: 10px;
+}
+img.button {
+	image-rendering: pixelated;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: crisp-edges;
+}
