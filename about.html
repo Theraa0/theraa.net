@@ -23,11 +23,12 @@ $(function(){
 </script>
 <script>
 function scrollSmoothTo(elementId) {
-  var element = document.getElementById(elementId);
-  element.scrollIntoView({
-    block: 'start',
-    behavior: 'smooth'
-  });
+	var element = document.getElementById(elementId);
+	element.scrollIntoView({
+		behavior: 'auto',
+		block: 'start',
+		inline: 'start'
+	});
 }
 </script>
 <!-- end of slow code -->
