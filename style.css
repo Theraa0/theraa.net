@@ -8,7 +8,7 @@
 	font-weight: 800;
 }
 html {
-	overflow: hidden;
+	min-height: 100%;
 }
 :root {
 	--color-main: black;
@@ -33,7 +33,6 @@ body {
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
 }
 a {
   color: var(--color-link);
@@ -91,5 +90,5 @@ main {
 .footer {
 	color: var(--color-accent);
 	max-width: calc(100% - 8em);
-	margin: 0 4em 4em 4em;
+	margin: 0 4em 1em 4em;
 }
