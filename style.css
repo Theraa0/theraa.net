@@ -7,6 +7,9 @@
 	src: url(resources/fonts/webfonts/JetBrainsMono-ExtraBold.woff2);
 	font-weight: 800;
 }
+html {
+	overflow: hidden;
+}
 :root {
 	--color-main: black;
 	--color-accent: #888;
@@ -22,15 +25,16 @@
 body {
 	font-size: 1em;
 	font-family: jetBrainsMono;
-	color: var(--color-main);
 	font-display: block;
+	line-height: 1.25em;
+	tab-size: 4;
+	color: var(--color-main);
 	background-color: var(--color-background);
 	margin: 0;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	tab-size: 4;
-	line-height: 1.25em;
+	position: fixed;
 }
 a {
   color: var(--color-link);
