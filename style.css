@@ -7,9 +7,6 @@
 	src: url(resources/fonts/webfonts/JetBrainsMono-ExtraBold.woff2);
 	font-weight: 800;
 }
-html {
-	min-height: 100%;
-}
 :root {
 	--color-main: black;
 	--color-accent: #888;
@@ -21,6 +18,9 @@ html {
 		--color-main: white;
 		--color-background: black;
 	}
+}
+html {
+	min-height: 100%;
 }
 body {
 	font-size: 1em;
@@ -56,9 +56,8 @@ p + p {
 }
 /* Header */
 table.header {
-	margin: 2em 0 0 2em;
+	margin: 2em 0 0 3em;
 	font-weight: 800;
-	/*text-shadow: 1px 1px 0px #d9073b, -1px -1px 1px #40b39a;*/
 }
 table.header td.main {
 	font-size: 150%;
@@ -68,27 +67,20 @@ table.header td.sub {
 }
 /* Tab Bar */
 table.tabs {
-	margin: 1em 0 1em 2em;
-	display: unset;
+	margin: 0.5em 0 1.5em 3.5em;
 }
 table.tabs td a {
 	margin: 0.25em 0.5em;
 }
 /* Text Body */
-.body-text {
-	flex: 1;
-	margin: 1em auto;
-	width: calc(100% - 8em);
-	max-width: 80ch;
-}
 main {
-	margin: 1em auto;
-	width: calc(100% - 8em);
+	margin: 0 auto;
+	width: calc(100% - 6em);
 	max-width: 80ch;
 }
 /* Footer */
 .footer {
 	color: var(--color-accent);
 	max-width: calc(100% - 8em);
-	margin: 0 4em 1em 4em;
+	margin: 1em auto;
 }
