@@ -40,6 +40,7 @@ body {
 }
 h1 {
 	font-weight: 800;
+	font-size: 150%;
 }
 main > h1:first-of-type {
 	margin-top: 0;
@@ -79,7 +80,10 @@ table.header {
 	font-weight: 800;
 }
 table.header td.main {
-	font-size: 150%;
+	font-size: 175%;
+}
+table.header #pageTitle {
+	display: inline-block;
 }
 table.header td.sub {
 	color: var(--color-accent);
