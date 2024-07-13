@@ -1,7 +1,20 @@
 ---
 import Layout from '../layouts/layout.astro'
+import Listing from '../components/mdPostListing.astro'
+const allPosts = await Astro.glob('./posts/*.md');
 ---
+<style>
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 0 2ch;
+}
+</style>
 <Layout title="blog">
 	<h1>Notes</h1>
 	<p>i dont think im qualified to write any kind of blog tbh, but it seems every hobbyists website i look at has one...</p>
+	<h1>Posts</h1>
+	<ul>
+	{allPosts.map((post) => <Listing post={post} />)}
+	</ul>
 </Layout>

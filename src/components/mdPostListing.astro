@@ -1,0 +1,23 @@
+---
+const { post } = Astro.props;
+---
+<style>
+.title {
+	font-weight: 800;
+}
+p + p {
+	margin: 0;
+}
+li {
+	margin-bottom: 1em;
+}
+li:last-child {
+	margin-bottom: 0;
+}
+</style>
+<li>
+	<a href={post.url}>
+		<p class="title">{post.frontmatter.title}</p>
+		<p class="description">{post.frontmatter.description}</p>
+	</a>
+</li>

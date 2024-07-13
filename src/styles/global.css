@@ -38,6 +38,12 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+h1 {
+	font-weight: 800;
+}
+main > h1:first-of-type {
+	margin-top: 0;
+}
 a {
   color: var(--color-link);
   text-decoration: none;
