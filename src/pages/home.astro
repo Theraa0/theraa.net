@@ -1,12 +1,25 @@
 ---
 import Layout from '../layouts/layout.astro'
 import '../styles/buttons.css'
+const allPages = await Astro.glob('./*.astro');
 ---
+<style>
+#sitemap {
+	display: flex;
+	flex-flow: row wrap;
+}
+#sitemap a {
+	min-width: calc(100% / 3);
+	height: 1.3em;
+}
+</style>
 <Layout title="home">
-		<p>hi, welcome to my site. everything is still work in progress so please excuse any possible crazyness. if you have any suggestions please mail me at <a href="mailto:theraa@duck.com">theraa@duck.com</a> or through any of my <a href="contact.html">socials</a>.</p>
+		<p>hi, welcome to my site. everything is still work in progress so please excuse any possible crazyness. if you have any suggestions please mail me at <a href="mailto:theraa@duck.com">theraa@duck.com</a> or through any of <a href="contact.html">my socials</a>.</p>
 		<h1>sitemap</h1>
-		<p>insert links here</p>
-		<h1>buttons</h1>
+		<div id=sitemap>
+			{allPages.map((page) => <a href={page.url}>{page.url}</li>)}
+		</div>
+		<h1>cool buttons</h1>
 		<div class="buttons center">
 			<a href="https://theanarchistlibrary.org/">
 				<img class="button" src="buttons/crushit.gif" width="88" height="31" alt="lets crush capitalism">
