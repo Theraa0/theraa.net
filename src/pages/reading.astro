@@ -8,7 +8,7 @@ import Layout from '../layouts/layout.astro'
 }
 
 </style>
-<script>
+<script is:inline>
 async function getBooks() {
 	const url = "https://openlibrary.org/people/theraa/books/already-read.json";
 	try {
