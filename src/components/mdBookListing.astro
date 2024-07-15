@@ -1,0 +1,22 @@
+---
+const { book } = Astro.props;
+---
+<style>
+.title {
+	font-weight: 800;
+}
+p + p {
+	margin: 0;
+}
+li {
+	margin-bottom: 1em;
+}
+li:last-child {
+	margin-bottom: 0;
+}
+</style>
+<li>
+	<a href={book.url}>
+		<p class="title">{book.frontmatter.title}</p>
+	</a>
+</li>
