@@ -2,19 +2,12 @@
 import Layout from '../layouts/layout.astro'
 ---
 <style>
-ul {
-	list-style: none;
-	padding: 0;
-	margin: 0 0 0 2ch;
+#already_read {
+	border-collapse: collapse;
+	
 }
-</style>
-<Layout title="reading">
-	<p>This page is intended as a place for me to recommend some books, because being recommended a book in person often ends up not being the ideal place for various reasons.</p>
-	<p>It'll also be an exercise for me to actually think about the stuff I've read as I feel like I havent been doing that enough</p>
-	<p><i>*this will hopefully be replaced with api calls soon*</i></p>
-	<p id="test"></p>
-</Layout>
 
+</style>
 <script>
 async function getBooks() {
 	const url = "https://openlibrary.org/people/theraa/books/already-read.json";
@@ -24,10 +17,22 @@ async function getBooks() {
 			throw new Error(`Response status: ${response.status}`);
 		}
 		const json = await response.json();
-		console.log(json);
-		document.getElementById("test").innerHTML = json;
+		for (let i in json.reading_log_entries) {
+			const finDate = "[" + json.reading_log_entries[i].logged_date.split(",")[0] + "]";
+			const item = "<tr>" + "<td class='logDate' style='vertical-align: top; padding-right: 2ch; color: var(--color-accent);'>" + finDate + "</td>" + "<td>" + json.reading_log_entries[i].work.title + ", by " + json.reading_log_entries[i].work.author_names[0] + "</td>"+ "</tr>";
+			document.getElementById("already_read").innerHTML += item;
+		}
 	} catch (error) {
 		console.error(error.message);
 	}
 }
+getBooks();
 </script>
+
+<Layout title="reading">
+	<h1>about</h1>
+	<p>This page is intended as a place for me to recommend some books, because being recommended a book in person often ends up not being the ideal place for various reasons. It'll also serve as an exercise for me to actually think about the stuff I've read as I feel like I havent been doing that enough</p>
+	<p>All entries below are sourced from <a href="https://openlibrary.org/people/theraa">my Open Library Account</a> but because their API isn't exactly great the date might be wrong and you won't be able to see my ratings and reviews for now.</p>
+	<h1>books</h1>
+	<table id="already_read"></table>
+</Layout>
