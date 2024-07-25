@@ -1,8 +1,8 @@
 # theraa.net
 just my personal website
 # todo
-- [ ] replace preloads and jquery with ssi
+- [x] replace preloads and jquery with ssi
 - [ ] create the wall and similar
-- [ ] movies/books section?
+- [x] movies/books section?
 - [ ] make my ff startpage available?
-- [ ] now section on about page
+- [x] now section on about page
