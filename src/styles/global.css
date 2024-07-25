@@ -2,11 +2,13 @@
 @font-face {
 	font-family: jetBrainsMono;
 	src: url('/fonts/JetBrainsMono-Regular.woff2');
+ font-display: block;
 }
 @font-face {
 	font-family: jetBrainsMono;
 	src: url('/fonts/JetBrainsMono-ExtraBold.woff2');
 	font-weight: 800;
+ font-display: swap;
 }
 
 /* Color Schemes */
