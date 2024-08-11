@@ -7,11 +7,13 @@ const allPages = await Astro.glob('./*.astro');
 #sitemap {
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: space-between;
 }
 /* divide 100% by ?ch then round down and divide 100% by result */
 #sitemap a {
-	min-width: calc(100% / 3);
- min-height: 24px;
+	min-width: calc(100% / 3 - 3ch);
+	padding-right: 1ch;
+	min-height: 24px;
 	height: 1.3em;
 }
 </style>
