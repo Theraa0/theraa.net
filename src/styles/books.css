@@ -1,0 +1,39 @@
+#already_read {
+	width: 100%;
+	border-collapse: collapse;
+}
+#already_read tr, #already_read td {
+	text-align: left;
+	vertical-align: top;
+}
+.outline {
+	border-right-style: solid;
+	border-right-width: 1px;
+}
+#already_read th:nth-child(1), #already_read td:nth-child(1) {
+	text-align: right;
+	padding-right: 1ch;
+	white-space: nowrap;
+}
+#already_read th:nth-child(2), #already_read td:nth-child(2) {
+	padding-left: 1ch;
+	min-width: 8ch;
+	white-space: nowrap;
+}
+#already_read td:nth-child(2) {
+	text-transform: capitalize;
+}
+#already_read th:nth-child(3), #already_read td:nth-child(3) {
+	padding-left: 1ch;
+	width: 100%;
+}
+@media (max-width: 600px) {
+	.removable {
+		display: none;
+	}
+	#already_read th:nth-child(2), #already_read td:nth-child(2) {
+		padding-right: 1ch;
+		padding-left: 0ch;
+		white-space: normal;
+	}
+}

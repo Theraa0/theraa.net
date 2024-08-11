@@ -1,38 +1,18 @@
 ---
 import Layout from '../layouts/layout.astro'
+import Listing from '../components/mdBookListing.astro'
+import '../styles/books.css';
+const allBooks = await Astro.glob('./books/*.md');
 ---
-<style>
-#already_read {
-	border-collapse: collapse;
-	
-}
-
-</style>
-<script is:inline>
-async function getBooks() {
-	const url = "https://openlibrary.org/people/theraa/books/already-read.json";
-	try {
-		const response = await fetch(url);
-		if (!response.ok) {
-			throw new Error(`Response status: ${response.status}`);
-		}
-		const json = await response.json();
-		for (let i in json.reading_log_entries) {
-			const finDate = "[" + json.reading_log_entries[i].logged_date.split(",")[0] + "]";
-			const item = "<tr>" + "<td class='logDate' style='vertical-align: top; padding-right: 2ch; color: var(--color-accent);'>" + finDate + "</td>" + "<td>" + json.reading_log_entries[i].work.title + ", by " + json.reading_log_entries[i].work.author_names[0] + "</td>"+ "</tr>";
-			document.getElementById("already_read").innerHTML += item;
-		}
-	} catch (error) {
-		console.error(error.message);
-	}
-}
-getBooks();
-</script>
-
 <Layout title="reading">
-	<h1>about</h1>
-	<p>This page is intended as a place for me to recommend some books, because being recommended a book in person often ends up not being the ideal place for various reasons. It'll also serve as an exercise for me to actually think about the stuff I've read as I feel like I havent been doing that enough</p>
-	<p>All entries below are sourced from <a href="https://openlibrary.org/people/theraa">my Open Library Account</a> but because their API isn't exactly great the date might be wrong and you won't be able to see my ratings and reviews for now.</p>
-	<h1>books</h1>
-	<table id="already_read"></table>
-</Layout>
+	<p>i will try to keep an archive of all the books i've read here, including a short review in order to be able to remind myself what i've thought about certain books and to serve as a resource for you to maybe discover some interesting books as well.</p>
+	<h1>Books</h1>
+	<table id="already_read">
+		<colgroup>
+			<col span="1" class="outline">
+			<col>
+			<col>
+		</colgroup>
+		<tr><th class="removable">date</th><th>title</th><th>short</th></tr>
+		{allBooks.map((book) => <Listing book={book} />)}
+	</table>

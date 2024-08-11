@@ -1,22 +1,15 @@
 ---
 const { book } = Astro.props;
+import '../styles/books.css'
 ---
 <style>
-.title {
-	font-weight: 800;
-}
-p + p {
-	margin: 0;
-}
-li {
-	margin-bottom: 1em;
-}
-li:last-child {
-	margin-bottom: 0;
-}
 </style>
-<li>
-	<a href={book.url}>
-		<p class="title">{book.frontmatter.title}</p>
-	</a>
-</li>
+<tr>
+	<td class="removable">{new Date(book.frontmatter.finished).toLocaleDateString('de-de', {
+		year: 'numeric',
+		month: 'numeric',
+		day: 'numeric',
+	})}</td>
+	<td><a href={book.url}>{book.frontmatter.title}</a></td>
+	<td>{book.frontmatter.rating}/5 — {book.frontmatter.short}</td>
+</tr>

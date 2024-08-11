@@ -46,21 +46,13 @@ h1 {
 }
 h2 {
 	font-weight: 800;
-	font-size: 160%;
+	font-size: 150%;
 }
 h3 {
 	font-weight: 800;
-	font-size: 145%;
+	font-size: 125%;
 }
 h4 {
-	font-weight: 800;
-	font-size: 130%;
-}
-h5 {
-	font-weight: 800;
-	font-size: 115%;
-}
-h6 {
 	font-weight: 800;
 	font-size: 100%;
 }
@@ -129,4 +121,19 @@ Footer {
 	color: var(--color-accent);
 	max-width: calc(100% - 8em);
 	margin: 1em auto;
+}
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+	h1 {
+		font-size: 145%;
+	}
+	h2 {
+		font-size: 130%;
+	}
+	h3 {
+		font-size: 115%;
+	}
+	h4 {
+		font-size: 100%;
+	}
 }

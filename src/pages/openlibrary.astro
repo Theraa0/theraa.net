@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/layout.astro'
+---
+<style>
+#already_read {
+	border-collapse: collapse;
+	
+}
+
+</style>
+<script is:inline>
+async function getBooks() {
+	const url = "https://openlibrary.org/people/theraa/books/already-read.json";
+	try {
+		const response = await fetch(url);
+		if (!response.ok) {
+			throw new Error(`Response status: ${response.status}`);
+		}
+		const json = await response.json();
+		for (let i in json.reading_log_entries) {
+			const finDate = "[" + json.reading_log_entries[i].logged_date.split(",")[0] + "]";
+			const item = "<tr>" + "<td class='logDate' style='vertical-align: top; padding-right: 2ch; color: var(--color-accent);'>" + finDate + "</td>" + "<td>" + json.reading_log_entries[i].work.title + ", by " + json.reading_log_entries[i].work.author_names[0] + "</td>"+ "</tr>";
+			document.getElementById("already_read").innerHTML += item;
+		}
+	} catch (error) {
+		console.error(error.message);
+	}
+}
+getBooks();
+</script>
+
+<Layout title="open library">
+	<h1>about</h1>
+	<p>this page was intended as a place for me to recommend some books, with all of them being sourced from the open library. But because that is in a barely usable state with most of the books i read and because their api is quite horrible this will only serve as an archive page. You will hopefully find a more up to date list under <a href="reading">reading</a></p>
+	<h1>books</h1>
+	<table id="already_read"></table>
+</Layout>
