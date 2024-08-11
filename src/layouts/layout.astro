@@ -2,14 +2,19 @@
 import '../styles/global.css'
 import Header from '../components/header.astro'
 import Footer from '../components/footer.astro'
-const { title } = Astro.props;
+export interface Props {
+  title: string;
+  description: string;
+}
+const { description, title }: Props = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>{title}</title>
-<meta name="viewport" content="width=device-width">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>{title}</title>
+<meta name="description" content={description}>
 </head>
 <body>
 	<header><Header title={title} /></header>
