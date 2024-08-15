@@ -1,10 +1,10 @@
 a.button {
 	height: 3em;
-	padding: 0 0.5em;
+	padding: 0 1em 0 0.75em;
 	margin: 1em 1em 0 0;
 	border-radius: 1em;
 	display: flex;
-	justify-content: center;
+	justify-content: left;
 	align-items: center;
 	border: 1px solid var(--color-link);
 	flex-grow: 1;
@@ -12,7 +12,7 @@ a.button {
 .ico-img {
 	height: 1.5em;
 	width: auto;
-	margin-right: 1em;
+	margin-right: 1ch;
 }
 #links {
 	display: flex;
