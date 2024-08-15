@@ -16,16 +16,16 @@ import '../styles/social-buttons.css'
 			<a class="button" href="https://www.last.fm/user/Theracraft">last.fm</a>
 			<a class="button" href="https://myanimelist.net/profile/Theraa">MyAnimeList</a>
 			<a class="button" href="https://www.speedrun.com/users/Theraa">speedrun.com</a>
-			<a class="button vip">mail/phone</a>
+			<a class="button vip" href="/public/rasmus.vcf">mail/phone</a>
 		</div>
 </Layout>
 <script>
-//var links = document.getElementById("links").getElementsByTagName("a")
-//var icons = []
-//for (var i = 0; i < links.length; i++) {
-//  var image = document.createElement("img");
-//  image.src = "https://" + links[i].hostname + "/favicon.ico";
-//  image.className = "ico-img";
-//  links[i].insertAdjacentElement("afterbegin", image);
-//}
+var links = document.getElementById("links").getElementsByTagName("a")
+var icons = []
+for (var i = 0; i < links.length; i++) {
+  var image = document.createElement("img");
+  image.src = "https://icons.duckduckgo.com/ip2/" + links[i].hostname + ".ico";
+  image.className = "ico-img";
+  links[i].insertAdjacentElement("afterbegin", image);
+}
 </script>
