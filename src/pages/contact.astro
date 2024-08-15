@@ -26,6 +26,7 @@ for (var i = 0; i < links.length; i++) {
   var image = document.createElement("img");
   image.src = "https://icons.duckduckgo.com/ip2/" + links[i].hostname + ".ico";
   image.className = "ico-img";
+  image.alt = "Icon for following link";
   links[i].insertAdjacentElement("afterbegin", image);
 }
 </script>
