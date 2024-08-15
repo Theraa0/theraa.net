@@ -1,9 +1,26 @@
-a.social-button {
+a.button {
 	height: 3em;
-	margin-top: 1em;
+	padding: 0 1em;
+	margin: 1em 1em 0 0;
 	border-radius: 1em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid var(--color-link)
+	border: 1px solid var(--color-link);
+	flex-grow: 1;
+}
+.ico-img {
+	height: 1.5em;
+	width: auto;
+	margin-right: 1em;
+	display: none;
+}
+#links {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+a.vip {
+	order: -1;
 }
