@@ -1,0 +1,11 @@
+#covers {
+	margin-left: 1em;
+}
+.cover {
+	display: block;
+	overflow: hidden;
+	float: left;
+	width: 64px;
+	height: 64px;
+	margin: 0 1em 1em 0;
+}

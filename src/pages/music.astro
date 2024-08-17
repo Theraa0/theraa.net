@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/layout.astro'
+import '../styles/music.css'
+---
+<script>
+const apiUrl = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=theracraft&api_key=b7d11a24486dd9d1e6d0076602abf245&format=json&period=overall&limit=36'
+
+fetch(apiUrl)
+	.then(response => {
+		if (!response.ok) {
+			throw new Error('Network response was not ok');
+		}
+		return response.json();
+	})
+	.then(data => {
+		for (let i = 0; i < Object.keys( data.topalbums.album ).length; i++) {
+			let cover = document.createElement("img");
+			cover.src = data.topalbums.album[i].image[1]['#text'];
+			cover.alt = data.topalbums.album[i].name;
+			cover.classList.add("cover");
+			let link = document.createElement("a");
+			link.href = data.topalbums.album[i].url;
+			link.target = "_blank";
+			link.appendChild(cover);
+			document.getElementById("covers").appendChild(link);
+		}
+	})
+	.catch(error => {
+		console.error('Error:', error);
+	});
+</script>
+<Layout title="music" description="this is apparently the music i listen to the most">
+<div id="covers"></div>
+</Layout>
