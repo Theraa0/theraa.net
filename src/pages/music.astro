@@ -2,7 +2,7 @@
 import Layout from '../layouts/layout.astro'
 import '../styles/music.css'
 ---
-<script is:inline>
+<script>
 const apiUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=theracraft&api_key=b7d11a24486dd9d1e6d0076602abf245&format=json&period=overall&limit=36'
 
 fetch(apiUrl)
