@@ -4,7 +4,9 @@ const { title } = Astro.props;
 ---
 <script>
 const title = document.getElementById("pageTitle").innerHTML;
-document.getElementById(title).classList.add("active");
+if (document.getElementById(title)) {
+	document.getElementById(title).classList.add("active");
+}
 </script>
 <table class="header">
 	<tr>
