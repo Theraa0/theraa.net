@@ -2,10 +2,16 @@
 import Layout from '../layouts/layout.astro'
 import '../styles/music.css'
 ---
-<script>
+<script is:inline>
 const apiUrl = 'http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=theracraft&api_key=b7d11a24486dd9d1e6d0076602abf245&format=json&period=overall&limit=36'
 
 fetch(apiUrl)
+	.then(response => {
+		if (!response.ok) {
+			throw new Error('Network response was not ok');
+		}
+		return response.json();
+	})
 	.then(data => {
 		for (let i = 0; i < Object.keys( data.topalbums.album ).length; i++) {
 			let cover = document.createElement("img");
@@ -19,7 +25,12 @@ fetch(apiUrl)
 			document.getElementById("covers").appendChild(link);
 		}
 	})
+	.catch(error => {
+		console.error('Error:', error);
+	});
 </script>
 <Layout title="music" description="this is apparently the music i listen to the most">
+<p>here u can find a bunch of my supposed "top albums" on <a href="https://www.last.fm">last.fm</a>, tho these arent actually fully representative cuz of various reasons</p>
+<p>astro is a stupid framework and cuz of that i have to run js on this site, sorry</p>
 <div id="covers"></div>
 </Layout>
