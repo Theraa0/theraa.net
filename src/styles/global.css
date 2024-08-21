@@ -27,7 +27,7 @@
 
 /* General Styling */
 html {
-	min-height: 100%;
+	min-height: 100vh;
 }
 body {
 	font-size: 1em;
