@@ -15,7 +15,7 @@ fetch(apiUrl)
 	.then(data => {
 		for (let i = 0; i < Object.keys( data.topalbums.album ).length; i++) {
 			let cover = document.createElement("img");
-			cover.src = data.topalbums.album[i].image[1]['#text'];
+			cover.src = data.topalbums.album[i].image[2]['#text'];
 			cover.alt = data.topalbums.album[i].name;
 			cover.classList.add("cover");
 			let link = document.createElement("a");
