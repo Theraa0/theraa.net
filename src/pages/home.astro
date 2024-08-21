@@ -8,7 +8,7 @@ const body_width = document.getElementById("sitemap").offsetWidth;
 const min_width = 7ch;
 comst columns = Math.floor(body_width/min_width);
 const column_width = body_width/columns;
-const children = document.getElementById("sitemap").children
+const children = document.getElementById("sitemap").childNodes;
 for (var i = 0; i < children.length; i++) {
  if (children[i].style.offsetWidth > column_width) {
   children[i].style.width = 2*column_width;
