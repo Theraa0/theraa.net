@@ -27,7 +27,7 @@
 
 /* General Styling */
 html {
- min-height: 100vh;
+ height: 100vh;
 }
 body {
 	font-size: 1em;
@@ -37,7 +37,7 @@ body {
 	color: var(--color-main);
 	background-color: var(--color-background);
 	margin: 0;
- flex: 1;
+ min-height: 100%;
 }
 h1 {
 	font-weight: 800;
