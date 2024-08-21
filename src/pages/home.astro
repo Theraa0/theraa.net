@@ -3,7 +3,7 @@ import Layout from '../layouts/layout.astro'
 import '../styles/buttons.css'
 const allPages = await Astro.glob('./*.astro');
 ---
-<script>
+<script is:inline>
 const body_width = document.getElementById("sitemap").offsetWidth;
 const min_width = 7ch;
 comst columns = Math.floor(body_width/min_width);
