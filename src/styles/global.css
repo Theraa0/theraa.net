@@ -34,8 +34,6 @@ body {
 	color: var(--color-main);
 	background-color: var(--color-background);
 	margin: 0;
-	display: flex;
-	flex-direction: column;
 }
 h1 {
 	font-weight: 800;
