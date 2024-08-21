@@ -27,7 +27,7 @@
 
 /* General Styling */
 html {
- height: 100vh;
+	background-color: var(--color-background);
 }
 body {
 	font-size: 1em;
@@ -35,9 +35,7 @@ body {
 	line-height: 1.3;
 	tab-size: 4;
 	color: var(--color-main);
-	background-color: var(--color-background);
 	margin: 0;
- height: 100vh;
 }
 h1 {
 	font-weight: 800;
