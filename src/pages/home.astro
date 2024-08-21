@@ -3,17 +3,27 @@ import Layout from '../layouts/layout.astro'
 import '../styles/buttons.css'
 const allPages = await Astro.glob('./*.astro');
 ---
+<script>
+const body_width = document.getElementById("sitemap").offsetWidth;
+const min_width = 7ch;
+comst columns = Math.floor(body_width/min_width);
+const column_width = body_width/columns;
+const children = document.getElementById("sitemap").children
+for (var i = 0; i < children.length; i++) {
+ if (children[i].style.offsetWidth > column_width) {
+  children[i].style.width = 2*column_width;
+ } else {
+  children[i].style.width = column_width
+ }
+}
+</script>
 <style>
 #sitemap {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
+	margin-right: 0.5ch;
 }
 /* divide 100% by ?ch then round down and divide 100% by result */
 #sitemap a {
-	min-width: calc(100% / 3 - 3ch);
 	padding-right: 1ch;
-	min-height: 24px;
 	height: 1.3em;
 }
 </style>
