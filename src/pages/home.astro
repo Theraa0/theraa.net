@@ -4,18 +4,23 @@ import '../styles/buttons.css'
 const allPages = await Astro.glob('./*.astro');
 ---
 <script is:inline>
-const body_width = document.getElementById("sitemap").offsetWidth;
-const min_width = 7ch;
-comst columns = Math.floor(body_width/min_width);
-const column_width = body_width/columns;
-const children = document.getElementById("sitemap").childNodes;
-for (var i = 0; i < children.length; i++) {
- if (children[i].style.offsetWidth > column_width) {
-  children[i].style.width = 2*column_width;
- } else {
-  children[i].style.width = column_width
- }
-}
+(function(window, document, undefined) {
+	window.onload = init;
+	function init(){
+		const body_width = document.getElementById("sitemap").offsetWidth;
+		const min_width = 90;
+		const columns = Math.floor(body_width / min_width);
+		const column_width = body_width/columns;
+		const children = document.getElementById("sitemap").childNodes;
+		for (var i = 0; i < children.length; i++) {
+			if(children[i].offsetWidth > column_width) {
+				children[i].style.width = column_width * 2 + "px";
+			} else {
+				children[i].style.width = column_width + "px";
+			}
+		}
+	}
+})(window, document, undefined);
 </script>
 <style>
 #sitemap {
@@ -23,65 +28,68 @@ for (var i = 0; i < children.length; i++) {
 }
 /* divide 100% by ?ch then round down and divide 100% by result */
 #sitemap a {
-	padding-right: 1ch;
-	height: 1.3em;
+	display: inline-block;
+}
+.h-card {
+	display: none;
 }
 </style>
 <Layout title="home" description="page overview and cool stuff">
-		<p>hi, welcome to my site. everything is still work in progress so please excuse any possible crazyness. if you have any suggestions please mail me at <a href="mailto:theraa@duck.com">theraa@duck.com</a> or through any of <a href="contact.html">my socials</a>.</p>
-		<h1>sitemap</h1>
-		<div id=sitemap>
-			{allPages.map((page) => <a href={page.url}>{page.url}</li>)}
-		</div>
-		<h1>cool buttons</h1>
-		<div class="buttons center">
-			<a href="https://theanarchistlibrary.org/">
-				<img class="button" src="buttons/crushit.gif" width="88" height="31" alt="lets crush capitalism">
-			</a>
-			<a href="https://www.mozilla.org/en-US/firefox/download/thanks/">
-				<img class="button" src="buttons/fftake.gif" width="88" height="31" alt="take back the web">
-			</a>
-			<a href="https://www.kernel.org/linux.html">
-				<img class="button" src="buttons/penguins.gif" width="88" height="31" alt="powered by: penguins">
-			</a>
-			<a href="https://www.youtube.com/watch?v=NY__VTIUsiU">
-				<img class="button" src="buttons/miku.gif" width="88" height="31" alt="this site is miku approved">
-			</a>
-			<a href="">
-				<img class="button" src="buttons/nocookie.gif" width="88" height="31" alt="This site is certified 100% cookie free!">
-			</a>
-			<a href="https://www.vim.org/">
-				<img class="button" src="buttons/vim.vialle.love.anim.gif" width="88" height="31" alt="Edited with Vim">
-			</a>
-			<a href="https://home.cern/science/computing/birth-web/short-history-web">
-				<img class="button" src="buttons/wwwbuttonnew.gif" width="88" height="31" alt="WORLD WIDE WEB Connecting people Since 1991">
-			</a>
-			<a href="https://youtu.be/YQ_xWvX1n9g?si=srejvqNa1KdQ_oNb">
-				<img class="button" src="buttons/nfthanks.gif" width="88" height="31" alt="nft? no fucking thanks">
-			</a>
-			<a href="https://youtu.be/dQw4w9WgXcQ?si=gd8pSYzuBsMjwuGO">
-				<img class="button" src="buttons/jollodotorg-defcon1.gif" width="88" height="31" alt="not secure">
-			</a>
-			<a href="">
-				<img class="button" src="buttons/monster-button.gif" width="88" height="31" alt="powered by monster energy">
-			</a>
-			<a href="https://en.wikipedia.org/wiki/Eat_the_rich#Origin">
-				<img class="button" src="buttons/eattherich.gif" width="88" height="31" alt="eat the rich">
-			</a>
-			<a href="https://www.w3schools.com/html">
-				<img class="button" src="buttons/learn-html.gif" width="88" height="31" alt="HTML, learn it today">
-			</a>
-			<a href="">
-				<img class="button" src="buttons/toostupid.gif" width="88" height="31" alt="too stupid to slep">
-			</a>
-			<a href="https://archlinux.org/">
-				<img class="button" src="buttons/archbtw.gif" width="88" height="31" alt="i use arch btw">
-			</a>
-			<a href="https://myanimelist.net/anime/39792/Eizouken_ni_wa_Te_wo_Dasu_na">
-				<img class="button" src="buttons/eizouken.gif" width="88" height="31" alt="keep your hands off eizouken">
-			</a>
-			<a href="">
-				<img class="button" src="buttons/button-mobile.png" width="88" height="31" alt="mobile friendly">
-			</a>
-		</div>
+	<a href="http://theraa.net/" class="h-card" rel="me">Rasmus</a>
+	<p>hi, welcome to my site. everything is still work in progress so please excuse any possible crazyness. if you have any suggestions please mail me at <a href="mailto:theraa@duck.com">theraa@duck.com</a> or through any of <a href="contact.html">my socials</a>.</p>
+	<h1>sitemap</h1>
+	<div id="sitemap">
+		{allPages.map((page) => <a href={page.url}>{page.url}</a>)}
+	</div>
+	<h1>cool buttons</h1>
+	<div class="buttons center">
+		<a href="https://theanarchistlibrary.org/">
+			<img class="button" src="buttons/crushit.gif" width="88" height="31" alt="lets crush capitalism">
+		</a>
+		<a href="https://www.mozilla.org/en-US/firefox/download/thanks/">
+			<img class="button" src="buttons/fftake.gif" width="88" height="31" alt="take back the web">
+		</a>
+		<a href="https://www.kernel.org/linux.html">
+			<img class="button" src="buttons/penguins.gif" width="88" height="31" alt="powered by: penguins">
+		</a>
+		<a href="https://www.youtube.com/watch?v=NY__VTIUsiU">
+			<img class="button" src="buttons/miku.gif" width="88" height="31" alt="this site is miku approved">
+		</a>
+		<a href="">
+			<img class="button" src="buttons/nocookie.gif" width="88" height="31" alt="This site is certified 100% cookie free!">
+		</a>
+		<a href="https://www.vim.org/">
+			<img class="button" src="buttons/vim.vialle.love.anim.gif" width="88" height="31" alt="Edited with Vim">
+		</a>
+		<a href="https://home.cern/science/computing/birth-web/short-history-web">
+			<img class="button" src="buttons/wwwbuttonnew.gif" width="88" height="31" alt="WORLD WIDE WEB Connecting people Since 1991">
+		</a>
+		<a href="https://youtu.be/YQ_xWvX1n9g?si=srejvqNa1KdQ_oNb">
+			<img class="button" src="buttons/nfthanks.gif" width="88" height="31" alt="nft? no fucking thanks">
+		</a>
+		<a href="https://youtu.be/dQw4w9WgXcQ?si=gd8pSYzuBsMjwuGO">
+			<img class="button" src="buttons/jollodotorg-defcon1.gif" width="88" height="31" alt="not secure">
+		</a>
+		<a href="">
+			<img class="button" src="buttons/monster-button.gif" width="88" height="31" alt="powered by monster energy">
+		</a>
+		<a href="https://en.wikipedia.org/wiki/Eat_the_rich#Origin">
+			<img class="button" src="buttons/eattherich.gif" width="88" height="31" alt="eat the rich">
+		</a>
+		<a href="https://www.w3schools.com/html">
+			<img class="button" src="buttons/learn-html.gif" width="88" height="31" alt="HTML, learn it today">
+		</a>
+		<a href="">
+			<img class="button" src="buttons/toostupid.gif" width="88" height="31" alt="too stupid to slep">
+		</a>
+		<a href="https://archlinux.org/">
+			<img class="button" src="buttons/archbtw.gif" width="88" height="31" alt="i use arch btw">
+		</a>
+		<a href="https://myanimelist.net/anime/39792/Eizouken_ni_wa_Te_wo_Dasu_na">
+			<img class="button" src="buttons/eizouken.gif" width="88" height="31" alt="keep your hands off eizouken">
+		</a>
+		<a href="">
+			<img class="button" src="buttons/button-mobile.png" width="88" height="31" alt="mobile friendly">
+		</a>
+	</div>
 </Layout>

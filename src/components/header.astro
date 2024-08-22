@@ -7,20 +7,31 @@ const title = document.getElementById("pageTitle").innerHTML;
 if (document.getElementById(title)) {
 	document.getElementById(title).classList.add("active");
 }
+const pathname = document.getElementById("subtitle").innerHTML;
+document.getElementById("subtitle").innerHTML = "";
+const path = pathname.split("/");
+for ( var i = 0; i < (path.length - 1); i++ ) {
+	const a = document.createElement("a");
+	for ( var ii = 0; ii < i + 2; ii++ ) {
+		a.href = a.href + path[ii] + "/";
+	}
+	a.innerText = "/" + path[i+1];
+	a.class = "pathLink";
+	document.getElementById("subtitle").appendChild(a);
+}
 </script>
 <table class="header">
 	<tr>
 		<td class="main">
 			<h1>
-				<span>theraa.net</span>
-				<span>/</span>
+				<span>theraa.net:</span>
 				<span id="pageTitle">{title}</span>
 			</h1>
 		</td>
 	</tr>
 	<tr>
 		<td class="sub">
-			<span>hello world</span>
+			<span id="subtitle">{Astro.url.pathname}</span>
 		</td>
 	</tr>
 </table>
