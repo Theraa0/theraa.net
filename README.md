@@ -3,10 +3,12 @@
 
 just my personal website
 # todo
+- [ ] add favicon.ico (a cat or smthn idk)
+- [ ] make 404/error page
 - [x] replace preloads and jquery with ssi
 - [x] create the wall and similar
 - [x] movies/books section?
-- [ ] make my ff startpage available?
+- [ ] make my ff startpage available
 - [x] now section on about page
 - [x] add h-card
 - [ ] why visit this site anyways?
