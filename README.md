@@ -4,7 +4,10 @@
 just my personal website
 # todo
 - [x] replace preloads and jquery with ssi
-- [ ] create the wall and similar
+- [x] create the wall and similar
 - [x] movies/books section?
 - [ ] make my ff startpage available?
 - [x] now section on about page
+- [x] add h-card
+- [ ] why visit this site anyways?
+- [ ] add links/buttons to other cool pages
