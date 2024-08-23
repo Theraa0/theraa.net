@@ -1,7 +1,9 @@
-main {
+.fof {
 	align-items: center;
 	justify-content: center;
 	display: flex;
+	flex-flow: column;
+	height: 100%;
 }
 .big {
 	font-weight: 800;

@@ -1,0 +1,52 @@
+main {
+	display: flex;
+}
+#sitemap {
+	margin-right: 0.5ch;
+}
+#sitemap a {
+	display: inline-block;
+}
+.h-card {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
+	grid-template-rows: auto 1.3em 1.3em 1.3em 1.3em 1.3em;
+	/*aspect-ratio: 5/3;*/
+	padding: 0.5em;
+	float: right;
+	margin: 0 0 2em 2em;
+	border: 1px solid var(--color-main);
+}
+.h-card * {
+	overflow: clip;
+}
+.u-photo {
+	max-height: 6.5em;
+	grid-column: span 2;
+	grid-row: 2 / span 5;
+	margin-right: 0.5em;
+}
+.p-name {
+	grid-column: span 3;
+	grid-row: 2;
+}
+.p-nickname {
+	grid-column: span 3;
+	grid-row: 3;
+}
+.u-url {
+	display: none;
+}
+.u-email {
+	grid-column: span 3;
+	grid-row: 4;
+}
+.dt-bday {
+	grid-column: span 3;
+	grid-row: 5;
+}
+@media (max-width: 600px) {
+	.h-card {
+		margin: 0 0 1em 0;
+	}
+}

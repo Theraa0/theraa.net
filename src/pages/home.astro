@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/layout.astro'
 import '../styles/buttons.css'
+import '../styles/home.css'
 const allPages = await Astro.glob('./*.astro');
 ---
 <script is:inline>
@@ -11,7 +12,7 @@ const allPages = await Astro.glob('./*.astro');
 		const min_width = 90;
 		const columns = Math.floor(body_width / min_width);
 		const column_width = body_width/columns;
-		const children = document.getElementById("sitemap").childNodes;
+		const children = document.getElementById("sitemap").children;
 		for (var i = 0; i < children.length; i++) {
 			if(children[i].offsetWidth > column_width) {
 				children[i].style.width = column_width * 2 + "px";
@@ -22,30 +23,21 @@ const allPages = await Astro.glob('./*.astro');
 	}
 })(window, document, undefined);
 </script>
-<style>
-#sitemap {
-	margin-right: 0.5ch;
-}
-/* divide 100% by ?ch then round down and divide 100% by result */
-#sitemap a {
-	display: inline-block;
-}
-.h-card {
-	display: none;
-}
-</style>
 <Layout title="home" description="page overview and cool stuff">
-	<a href="http://theraa.net/" class="h-card" rel="me">Rasmus</a>
+	<div">
 	<div class="h-card">
+		<img class="u-photo" src="images/pfp.jpg"/>
 		<span class="p-name">Rasmus</span>
 		<span class="p-nickname">Thera</span>
-		<a class="u-url" href="http://theraa.net">w</a>
-		<a href="mailto:theraa@duck.com" rel="me">theraa@duck.com</a>
+		<a class="u-url" href="http://theraa.net"></a>
+		<a class="u-email" href="mailto:theraa@duck.com" rel="me">theraa@duck.com</a>
 		<time class="dt-bday">2005-08-31</time>
-		<img class="u-photo" src=""/>
 	</div>
-	<p>hi, welcome to my site. everything is still work in progress so please excuse any possible crazyness. if you have any suggestions please mail me at <a href="mailto:theraa@duck.com">theraa@duck.com</a> or through any of <a href="contact.html">my socials</a>.</p>
-	<h1>sitemap</h1>
+	<p>hi, im rasmus, welcome to my site! everything is still pretty new so things might be a bit silly, but you'll manage! this site is a lot of things but between other things i'm <a href="books">writing my opinions on books</a>, <a href="/about">maintaining a now page</a>, and learn webdev.</p>
+	<p>please take a look arround, the best place to start for now is the <a onclick="document.getElementById('sitemap-heading').scrollIntoView({behavior: 'smooth'})">sitemap</a></p>
+	<p>if you have any idea on stuff i should add here please lmk through my <a href="/contact">contacts</a>, im very much open to good ideas.</p>
+	</div>
+	<h1 id="sitemap-heading">sitemap</h1>
 	<div id="sitemap">
 		{allPages.map((page) => <a href={page.url}>{page.url}</a>)}
 	</div>

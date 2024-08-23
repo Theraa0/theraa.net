@@ -26,10 +26,8 @@
 }
 
 /* General Styling */
-* {
-	background-color: var(--color-background);
-}
 html, body {
+	background-color: var(--color-background);
 	display: flex;
 	flex-flow: column;
 	height: 100vh;
@@ -41,6 +39,8 @@ body {
 	tab-size: 4;
 	color: var(--color-main);
 	margin: 0;
+	overflow-x: clip;
+	word-break: break-word;
 }
 h1 {
 	font-weight: 800;
@@ -50,13 +50,22 @@ h2 {
 	font-weight: 800;
 	font-size: 150%;
 }
+h2::before {
+	content: "## ";
+}
 h3 {
 	font-weight: 800;
 	font-size: 125%;
 }
+h3::before {
+	content: "### ";
+}
 h4 {
 	font-weight: 800;
 	font-size: 100%;
+}
+h4::before {
+	content: "#### ";
 }
 main > h1:first-child {
 	margin-top: 0;
