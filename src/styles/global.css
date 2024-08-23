@@ -2,13 +2,13 @@
 @font-face {
 	font-family: jetBrainsMono;
 	src: url('/fonts/JetBrainsMono-Regular.woff2');
- font-display: block;
+	font-display: block;
 }
 @font-face {
 	font-family: jetBrainsMono;
 	src: url('/fonts/JetBrainsMono-ExtraBold.woff2');
 	font-weight: 800;
- font-display: swap;
+	font-display: swap;
 }
 
 /* Color Schemes */
@@ -28,6 +28,11 @@
 /* General Styling */
 * {
 	background-color: var(--color-background);
+}
+html, body {
+	display: flex;
+	flex-flow: column;
+	height: 100vh;
 }
 body {
 	font-size: 1em;
@@ -114,6 +119,8 @@ main {
 	margin: 0 auto;
 	width: calc(100% - 6em);
 	max-width: 80ch;
+	flex-grow: 1;
+	flex-flow: column;
 }
 
 /* Footer */
