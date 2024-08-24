@@ -10,6 +10,7 @@ just my personal website
 - [ ] webmention inplementation
 - [ ] create own button(s)
 - [ ] nicer h-card styling
+- [ ] implement unique image ids
 - [x] make 404/error page
 - [x] replace preloads and jquery with ssi
 - [x] create the wall and similar
