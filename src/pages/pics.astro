@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets'
+
+const images = await Astro.glob('../assets/art/*.jpg');
+---
+	{
+		images.map((img) => (
+			<Image
+      		src={img.default}
+      		width=""
+      		alt="a Photo"
+      		class=""
+      	/>
+   	))
+	}
