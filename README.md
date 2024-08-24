@@ -4,7 +4,13 @@
 just my personal website
 # todo
 - [ ] add favicon.ico (a cat or smthn idk)
-- [ ] make 404/error page
+- [ ] give sitemap its own page in head
+- [ ] show latest gh commits w/ date
+- [ ] POSSE implementation
+- [ ] webmention inplementation
+- [ ] create own button(s)
+- [ ] nicer h-card styling
+- [x] make 404/error page
 - [x] replace preloads and jquery with ssi
 - [x] create the wall and similar
 - [x] movies/books section?
