@@ -20,3 +20,4 @@ just my personal website
 - [x] add h-card
 - [ ] why visit this site anyways?
 - [ ] add links/buttons to other cool pages
+- [x] add smooth sailing button
