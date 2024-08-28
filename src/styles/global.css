@@ -61,6 +61,15 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+button {
+	background-color: unset;
+	color: red;
+	border: solid thin red;
+	border-radius: 4px;
+}
+button:hover {
+	text-decoration: underline;
+}
 p {
 	margin: 0;
 	text-transform: lowercase;
