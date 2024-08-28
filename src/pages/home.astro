@@ -26,7 +26,7 @@ const allPages = await Astro.glob('./*.astro');
 <Layout title="home" description="page overview and cool stuff">
 	<div">
 	<div class="h-card">
-		<img class="u-photo" src="images/pfp.jpg"/>
+		<img class="u-photo" src="images/pfp.jpg" alt="a stack of old books in a antique store in bangalore" width="104" height="104"/>
 		<span class="p-name">Rasmus</span>
 		<span class="p-nickname">Thera</span>
 		<a class="u-url" href="http://theraa.net"></a>
@@ -34,14 +34,14 @@ const allPages = await Astro.glob('./*.astro');
 		<time class="dt-bday">2005-08-31</time>
 	</div>
 	<p>hi, im rasmus, welcome to my site! everything is still pretty new so things might be a bit silly, but you'll manage! this site is a lot of things but between other things i'm <a href="books">writing my opinions on books</a>, <a href="/about">maintaining a now page</a>, and learn webdev.</p>
-	<p>please take a look arround, the best place to start for now is the <a onclick="document.getElementById('sitemap-heading').scrollIntoView({behavior: 'smooth'})">sitemap</a></p>
+	<p>please take a look arround, the best place to start for now is the <button onclick="document.getElementById('sitemap-heading').scrollIntoView({behavior: 'smooth'})">sitemap</button></p>
 	<p>if you have any idea on stuff i should add here please lmk through my <a href="/contact">contacts</a>, im very much open to good ideas.</p>
 	</div>
 	<h1 id="sitemap-heading">sitemap</h1>
 	<div id="sitemap">
 		{allPages.map((page) => <a href={page.url}>{page.url}</a>)}
 	</div>
-	<h1>cool buttons</h1>
+	<h1>buttons</h1>
 	<div class="buttons center">
 		<a href="https://theanarchistlibrary.org/">
 			<img class="button" src="buttons/crushit.gif" width="88" height="31" alt="lets crush capitalism">

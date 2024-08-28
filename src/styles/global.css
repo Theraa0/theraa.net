@@ -15,7 +15,7 @@
 :root {
 	--color-main: black;
 	--color-accent: #767676;
-	--color-link: blue;
+	--color-link: #f00;
 	--color-background: white;
 }
 @media (prefers-color-scheme: dark) {
@@ -28,9 +28,6 @@
 /* General Styling */
 html, body {
 	background-color: var(--color-background);
-	display: flex;
-	flex-flow: column;
-	height: 100vh;
 }
 body {
 	font-size: 1em;
@@ -39,7 +36,6 @@ body {
 	tab-size: 4;
 	color: var(--color-main);
 	margin: 0;
-	overflow-x: clip;
 	word-break: break-word;
 }
 h1 {
@@ -50,25 +46,13 @@ h2 {
 	font-weight: 800;
 	font-size: 150%;
 }
-h2::before {
-	content: "## ";
-}
 h3 {
 	font-weight: 800;
 	font-size: 125%;
 }
-h3::before {
-	content: "### ";
-}
 h4 {
 	font-weight: 800;
 	font-size: 100%;
-}
-h4::before {
-	content: "#### ";
-}
-main > h1:first-child {
-	margin-top: 0;
 }
 a {
 	color: var(--color-link);
@@ -77,12 +61,9 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-a.active {
-	color: var(--color-main);
-	font-weight: 800;
-}
 p {
 	margin: 0;
+	text-transform: lowercase;
 }
 p + p {
 	margin-top: 1em;
@@ -128,8 +109,6 @@ main {
 	margin: 0 auto;
 	width: calc(100% - 6em);
 	max-width: 80ch;
-	flex-grow: 1;
-	flex-flow: column;
 }
 
 /* Footer */

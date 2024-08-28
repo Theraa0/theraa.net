@@ -3,10 +3,6 @@ import '../styles/global.css'
 const { title } = Astro.props;
 ---
 <script>
-const title = document.getElementById("pageTitle").innerHTML;
-if (document.getElementById(title)) {
-	document.getElementById(title).classList.add("active");
-}
 const pathname = document.getElementById("subtitle").innerHTML;
 document.getElementById("subtitle").innerHTML = "";
 const path = pathname.split("/");
@@ -16,7 +12,6 @@ for ( var i = 0; i < (path.length - 1); i++ ) {
 		a.href = a.href + path[ii] + "/";
 	}
 	a.innerText = "/" + path[i+1];
-	a.class = "pathLink";
 	document.getElementById("subtitle").appendChild(a);
 }
 </script>

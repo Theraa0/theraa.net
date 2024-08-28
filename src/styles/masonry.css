@@ -26,3 +26,8 @@
 	flex-flow: column;
 	margin-right: 8px;
 }
+@media (scripting: none) {
+	.masonry-element {
+		display: initial;
+	}
+}
