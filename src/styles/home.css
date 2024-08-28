@@ -52,5 +52,9 @@
 	align-content: center;
 }
 .addMyButton button {
-		margin-left: 1em;
-	}
+	margin-left: 1em;
+}
+.addMyButton p {
+	margin-top: 1em !important;
+}
+
