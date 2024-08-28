@@ -6,8 +6,8 @@ import { Image } from 'astro:assets'
 const images = await Astro.glob('../assets/*');
 ---
 <Layout title="pics test" description="temp; pls ignore">
-<p>i made this page to develop my new masonry image layout, but i dont actually have any relevant images to display yet. so this site will stay up for a while to not forget how it works.</p>
-<p>i have not made any of these memes, they were just the fastest thing i found to test this with</p>
+<p>I made this page to develop my new masonry image component, but I dont actually have any relevant images to display yet. This site will stay up for a while so I don't forget how it works.</p>
+<p>I have not made any of these, they were just the fastest thing I found to test this with</p>
 <Masonry minWidth="120">
 	{
 		images.map((img) => (
