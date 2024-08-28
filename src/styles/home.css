@@ -1,6 +1,11 @@
 #sitemap a {
 	display: inline-block;
 }
+@media (scripting: none) {
+	#sitemap a {
+		padding-right: 1em;
+	}
+}
 .h-card {
 	display: grid;
 	grid-template-columns: auto auto auto auto auto;
@@ -42,8 +47,10 @@
 		float: none;
 	}
 }
-@media (scripting: none) {
-	#sitemap a {
-		padding-right: 1em;
-	}
+.addMyButton {
+	display: flex;
+	align-content: center;
 }
+.addMyButton button {
+		margin-left: 1em;
+	}
