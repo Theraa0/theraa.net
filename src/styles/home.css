@@ -1,9 +1,6 @@
 main {
 	display: flex;
 }
-#sitemap {
-	margin-right: 0.5ch;
-}
 #sitemap a {
 	display: inline-block;
 }
@@ -48,5 +45,6 @@ main {
 @media (max-width: 600px) {
 	.h-card {
 		margin: 0 0 1em 0;
+		float: none;
 	}
 }
