@@ -54,7 +54,7 @@
 .addMyButton button {
 	margin-left: 1em;
 }
-.addMyButton p {
+#amb-p {
 	margin-top: 1em !important;
 }
 
