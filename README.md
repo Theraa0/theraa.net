@@ -7,7 +7,7 @@ just my personal website
 - [x] change section hrefs to buttons when js is available
 - [x] add skip to main content button
 - [ ] add favicon.ico (a cat or smthn idk)
-- [ ] give sitemap its own page in head
+- [x] give sitemap its own page in head
 - [ ] show latest gh commits w/ date
 - [ ] POSSE implementation
 - [ ] webmention implementation

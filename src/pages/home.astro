@@ -23,7 +23,8 @@ const allPages = await Astro.glob('./*.astro');
 	}
 })(window, document, undefined);
 function addMyButton() {
-	const addMyButton = '<a href="https://theraa.net/"><img src="https://theraa.net/myButtons/theraa-button-31.gif" width="88" height="31" alt="theraa.net"></a>';
+	//const addMyButton = '<a href="https://theraa.net/"><img src="https://theraa.net/myButtons/theraa-button-31.gif" width="88" height="31" alt="theraa.net"></a>';
+	const addMyButton = document.getElementById("test").innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 	navigator.clipboard.writeText(addMyButton);
 }
 </script>
@@ -109,7 +110,7 @@ function addMyButton() {
 		<img class="button" src="buttons/myButtons/theraa-button-31.gif" width="88" height="31" alt="theraa.net">
 		<button onclick="addMyButton()" id="amb-button">copy html</button>
 	</div>
-<pre id="amb-pre"><code>&lta href="https://theraa.net/"&gt
+<pre id="amb-pre"><code id="test">&lta href="https://theraa.net/"&gt
 	&ltimg src="https://theraa.net/myButtons/theraa-button-31.gif" width="88" height="31" alt="theraa.net"&gt
 &lt/a&gt</code></pre>
 	<p id="amb-p">If you do, do let me know and I'll probably link back to u</p>
