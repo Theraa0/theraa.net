@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/layout.astro'
-import '../styles/social-buttons.css'
+import '../styles/contact.css'
 ---
 <Layout title="contact" description="links to my profiles on a lot of different social media platforms">
 		<p>This really is just as much an overview for you as it is for me cuz keep loosing track of all the accounts I have and this list is definetely not complete</p>
@@ -26,7 +26,7 @@ for (var i = 0; i < links.length; i++) {
   var image = document.createElement("img");
   image.src = "https://icons.duckduckgo.com/ip2/" + links[i].hostname + ".ico";
   image.className = "ico-img";
-  image.alt = "Icon for following link";
+  image.alt = "Icon";
   links[i].insertAdjacentElement("afterbegin", image);
 }
 </script>

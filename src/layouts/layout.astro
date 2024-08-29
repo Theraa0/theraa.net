@@ -24,3 +24,27 @@ const { description, title }: Props = Astro.props;
 	<footer class="center"><Footer /></footer>
 </body>
 </html> 
+<script is:inline>
+//replace all isSectionLinks with buttons for semantics and fun
+scrollIntoView = function(destination) {
+}
+anchorToButton = function(link) {
+	var button = document.createElement("button");
+	button.innerHTML = link.innerHTML;
+	button.id = link.id;
+	for ( var i = 0; i < link.classList.length; i++ ) {
+		button.classList.add(link.classList[i]);
+	}
+	const destination = link.hash.replace("#", "");
+	//console.log(destination);
+	//button.onclick = function() { document.getElementById(destination).scrollIntoView({behaviour: "smooth"}); }
+	button.setAttribute("onclick", 'document.getElementById("' + destination + '").scrollIntoView({behavior: "smooth"})');
+	var linkParent = link.parentNode;
+	linkParent.replaceChild(button, link);
+}
+const sectionLinks = document.getElementsByClassName("isSectionLink");
+for ( var i = 0; i < sectionLinks.length; i++ ) {
+	anchorToButton( sectionLinks[i] );
+}
+//<button onclick="document.getElementById('sitemap-heading').scrollIntoView({behavior: 'smooth'})">sitemap</button>
+</script>

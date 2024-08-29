@@ -3,13 +3,14 @@
 
 just my personal website
 # todo
-- [ ] change section hrefs to buttons when js is available
+- [ ] make music page work without js
+- [x] change section hrefs to buttons when js is available
 - [x] add skip to main content button
 - [ ] add favicon.ico (a cat or smthn idk)
 - [ ] give sitemap its own page in head
 - [ ] show latest gh commits w/ date
 - [ ] POSSE implementation
-- [ ] webmention inplementation
+- [ ] webmention implementation
 - [x] create own button(s)
 - [x] nicer h-card styling
 - [ ] implement unique image ids

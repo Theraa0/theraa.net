@@ -9,10 +9,16 @@ a.button {
 	border: 1px solid var(--color-link);
 	flex-grow: 1;
 }
+@media (scripting: none) {
+	a.button {
+		justify-content: center;
+	}
+}
 .ico-img {
 	height: 1.5em;
 	width: auto;
 	margin-right: 1ch;
+	font-size: 0;
 }
 #links {
 	display: flex;

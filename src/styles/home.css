@@ -54,7 +54,17 @@
 .addMyButton button {
 	margin-left: 1em;
 }
+#amb-pre {
+	overflow: scroll;
+	padding: 1em;
+	border: solid white 1px;
+}
 #amb-p {
 	margin-top: 1em !important;
 }
 
+@media (scripting: none) {
+	#amb-button {
+		display: none;
+	}
+}

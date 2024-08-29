@@ -27,7 +27,13 @@
 	margin-right: 8px;
 }
 @media (scripting: none) {
+	#initialElements {
+		display: flex;
+		flex-wrap: wrap;
+	}
 	.masonry-element {
 		display: initial;
+		width: 10em;
+		object-fit: contain;
 	}
 }
