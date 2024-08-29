@@ -1,9 +1,13 @@
 #covers {
-	display: inline-block;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(64px 1fr));
+	grid-gap: 1rem;
 }
 .cover {
+/*	display: block;
 	overflow: hidden;
 	width: 64px;
 	height: 64px;
-	margin: 0.5em;
+	margin: 0 1em 1em 0;*/
+	aspect-ratio: 1/1;
 }
