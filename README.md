@@ -3,13 +3,15 @@
 
 just my personal website
 # todo
+- [ ] change section hrefs to buttons when js is available
+- [ ] add skip to main content button
 - [ ] add favicon.ico (a cat or smthn idk)
 - [ ] give sitemap its own page in head
 - [ ] show latest gh commits w/ date
 - [ ] POSSE implementation
 - [ ] webmention inplementation
-- [ ] create own button(s)
-- [ ] nicer h-card styling
+- [x] create own button(s)
+- [x] nicer h-card styling
 - [ ] implement unique image ids
 - [x] make 404/error page
 - [x] replace preloads and jquery with ssi
