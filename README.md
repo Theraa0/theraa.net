@@ -4,7 +4,7 @@
 just my personal website
 # todo
 - [ ] change section hrefs to buttons when js is available
-- [ ] add skip to main content button
+- [x] add skip to main content button
 - [ ] add favicon.ico (a cat or smthn idk)
 - [ ] give sitemap its own page in head
 - [ ] show latest gh commits w/ date
