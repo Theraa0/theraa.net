@@ -24,3 +24,4 @@ just my personal website
 - [ ] why visit this site anyways?
 - [ ] add links/buttons to other cool pages
 - [x] add smooth sailing button
+- [ ] rework urls (isbn for books etc)
