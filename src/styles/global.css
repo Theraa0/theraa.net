@@ -14,7 +14,6 @@
 /* Color Schemes */
 :root {
 	--color-main: black;
-	--color-accent: #767676;
 	--color-link: #f00;
 	--color-background: white;
 }
@@ -99,33 +98,24 @@ p + p {
 header {
 	margin: 2em 0 1.5em 3em;
 }
-header table {
-	border-collapse: collapse;
-}
-header table td {
-	padding: 0;
-}
-table.header {
+#header-main {
 	font-weight: 800;
-}
-table.header td.headMain h1 {
 	margin: 0;
 }
-table.header #pageTitle {
-	display: inline-block;
+#header-sub {
+	color: var(--color-link);
 }
-table.header td.sub {
-	color: var(--color-accent);
+#header-tabs {
+	margin-top: 0.75em;
+	/*	width: max-content;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;*/
 }
-table.header td.sub a {
-	color: var(--color-accent);
+#header-tabs a {
+	padding-right: 1ch;
 }
-table.tabs {
-	margin: 0.5em 0 0 -0.5em;
-}
-table.tabs td a {
-	margin: 0 0.5em;
-}
+
 
 /* Text Body */
 main {
@@ -136,9 +126,8 @@ main {
 
 /* Footer */
 Footer {
-	color: var(--color-accent);
 	max-width: calc(100% - 8em);
-	margin: 1em auto;
+	margin: 2em auto 1em auto;
 }
 /* Mobile Adjustments */
 @media (max-width: 600px) {
