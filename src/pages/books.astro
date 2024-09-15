@@ -3,6 +3,7 @@ import Layout from '../layouts/layout.astro'
 import Listing from '../components/mdBookListing.astro'
 import '../styles/books.css';
 const allBooks = await Astro.glob('./books/*.md');
+const orderedBooks = allBooks.sort((a, b) => Date.parse(b.frontmatter.finished) - Date.parse(a.frontmatter.finished));
 ---
 <Layout title="reading" description="an overview of a bunch of books ive read on it and my very qualified opinions on them">
 	<p>I will try to keep an archive of all the books I've read here, including a short review in order to be able to remember what I've thought about them, and to serve as a resource for you to maybe discover some interesting new books as well.</p>
@@ -13,6 +14,9 @@ const allBooks = await Astro.glob('./books/*.md');
 			<col>
 			<col>
 		</colgroup>
-		<tr><th class="removable">date</th><th>title</th><th>short</th></tr>
-		{allBooks.map((book) => <Listing book={book} />)}
+		<tr><th class="removable">date</th>
+		<th>title</th>
+		<th>short</th></tr>
+		{orderedBooks.map((book) => <Listing book={book} />)}
 	</table>
+</Layout>
