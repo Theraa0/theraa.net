@@ -54,6 +54,10 @@
 .addMyButton button {
 	margin-left: 1em;
 }
+#amb-button {
+	display: flex;
+	padding: 2px;
+}
 #amb-pre {
 	overflow: scroll;
 	padding: 1em;
