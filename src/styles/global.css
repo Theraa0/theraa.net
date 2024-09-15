@@ -102,6 +102,9 @@ header {
 	font-weight: 800;
 	margin: 0;
 }
+#header-title {
+	margin-left: 1ch;
+}
 #header-sub {
 	color: var(--color-link);
 }
