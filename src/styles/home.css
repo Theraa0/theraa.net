@@ -47,6 +47,9 @@
 		float: none;
 	}
 }
+#sitemap-info {
+	margin-bottom: 1em;
+}
 .addMyButton {
 	display: flex;
 	align-content: center;

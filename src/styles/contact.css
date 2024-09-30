@@ -18,7 +18,6 @@ a.button {
 	height: 1.5em;
 	width: auto;
 	margin-right: 1ch;
-	font-size: 0;
 }
 #links {
 	display: flex;
