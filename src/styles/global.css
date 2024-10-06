@@ -79,6 +79,19 @@ p + p {
 .center {
 	text-align: center;
 }
+ul + p {
+	margin-top: 1em;
+}
+ul {
+	list-style-type: "-";
+	padding: 0;
+	margin: 0 0 0 1ch;
+}
+li {
+	margin-left: 1ch;
+   padding-left: 0;
+   text-indent: 1ch;
+}
 
 /* Header */
 .skipToMain {
