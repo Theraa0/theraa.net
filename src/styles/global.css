@@ -70,18 +70,18 @@ button:hover {
 	text-decoration: underline;
 }
 p {
-	margin: 0;
+	/*margin: 0;*/
 	text-transform: lowercase;
 }
-p + p {
+/*p + p {
 	margin-top: 1em;
-}
+}*/
 .center {
 	text-align: center;
 }
-ul + p {
+/*ul + p {
 	margin-top: 1em;
-}
+}*/
 ul {
 	list-style-type: "-";
 	padding: 0;
