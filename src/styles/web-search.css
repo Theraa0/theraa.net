@@ -1,0 +1,14 @@
+.center-all {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-flow: column;
+	height: 100%;
+}
+
+input {
+  background-color: unset;
+  color: var(--color-main);
+  border: solid thin var(--color-link);
+  border-radius: 4px;
+}
