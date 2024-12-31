@@ -14,7 +14,6 @@
 /* Color Schemes */
 :root {
 	--color-main: black;
-	--color-accent: #767676;
 	--color-link: #f00;
 	--color-background: white;
 }
@@ -71,14 +70,27 @@ button:hover {
 	text-decoration: underline;
 }
 p {
-	margin: 0;
+	/*margin: 0;*/
 	text-transform: lowercase;
 }
-p + p {
+/*p + p {
 	margin-top: 1em;
-}
+}*/
 .center {
 	text-align: center;
+}
+/*ul + p {
+	margin-top: 1em;
+}*/
+ul {
+	list-style-type: "-";
+	padding: 0;
+	margin: 0 0 0 1ch;
+}
+li {
+	margin-left: 1ch;
+   padding-left: 0;
+   text-indent: 1ch;
 }
 
 /* Header */
@@ -99,33 +111,27 @@ p + p {
 header {
 	margin: 2em 0 1.5em 3em;
 }
-header table {
-	border-collapse: collapse;
-}
-header table td {
-	padding: 0;
-}
-table.header {
+#header-main {
 	font-weight: 800;
-}
-table.header td.headMain h1 {
 	margin: 0;
 }
-table.header #pageTitle {
-	display: inline-block;
+#header-title {
+	margin-left: 1ch;
 }
-table.header td.sub {
-	color: var(--color-accent);
+#header-sub {
+	color: var(--color-link);
 }
-table.header td.sub a {
-	color: var(--color-accent);
+#header-tabs {
+	margin-top: 0.75em;
+	/*	width: max-content;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;*/
 }
-table.tabs {
-	margin: 0.5em 0 0 -0.5em;
+#header-tabs a {
+	padding-right: 1ch;
 }
-table.tabs td a {
-	margin: 0 0.5em;
-}
+
 
 /* Text Body */
 main {
@@ -136,9 +142,8 @@ main {
 
 /* Footer */
 Footer {
-	color: var(--color-accent);
 	max-width: calc(100% - 8em);
-	margin: 1em auto;
+	margin: 2em auto 1em auto;
 }
 /* Mobile Adjustments */
 @media (max-width: 600px) {

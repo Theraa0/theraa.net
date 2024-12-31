@@ -10,7 +10,7 @@
 	content: "";
 	width: 0.6em;
 	height: 0.6em;
-	background-color: var(--color-accent);
+	background-color: var(--color-main);
 	border-radius: 50%;
 	display: block;
 	position: absolute;
@@ -23,7 +23,7 @@ article {
 }
 article::before {
 	content: "";
-	background-color: var(--color-accent);
+	background-color: var(--color-main);
 	height: calc(100% + 1em);
 	width: 0.2em;
 	position: absolute;

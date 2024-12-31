@@ -47,12 +47,19 @@
 		float: none;
 	}
 }
+#sitemap-info {
+	margin-bottom: 1em;
+}
 .addMyButton {
 	display: flex;
 	align-content: center;
 }
 .addMyButton button {
 	margin-left: 1em;
+}
+#amb-button {
+	display: flex;
+	padding: 2px;
 }
 #amb-pre {
 	overflow: scroll;
