@@ -1,45 +1,8 @@
 ---
 import Layout from '../layouts/layout.astro'
 ---
-<script is:inline>
-    function isValidURL(str) {
-      var regexp = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
-      if (regexp.test(str)) {
-          return true;
-      } else {
-          return false;
-      }
-    }
-    function submitted(event) {
-      event.preventDefault();
-      var input = document.getElementById('query').value
-      if (isValidURL(input)) {
-        if (input.startsWith('http://') || input.startsWith('https://')) {
-          window.location = input
-        }
-        else {
-        window.location = 'https://' + input
-        }
-      }
-      else {
-        const url = 'https://duckduckgo.com/?q=' + '+' + input
-        window.location = url
-      }
-    }
-    document.getElementById('form').addEventListener('submit', submitted);
-		function fullscreenToggle() {
-			if (document.fullscreenElement) {
-				document.exitFullscreen();
-			}
-			else {
-				document.documentElement.requestFullscreen();
-			}
-		}
-</script>
 <Layout title="home" description="page overview and cool stuff">
 	<div class="center" id="topBar">
-		<form id="form">
-			<input type="search" id="query" name="q" placeholder="Search with DuckDuckGo or enter adress" autofocus>
-		</form>
+		<iframe src="https://duckduckgo.com/search.html?width=250&prefill=Explore the web&focus=yes" style="overflow:hidden;margin:0;padding:0;width:308px;height:40px;" frameborder="0"></iframe>
 	</div>
 </Layout>
