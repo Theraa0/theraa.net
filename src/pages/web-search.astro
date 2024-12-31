@@ -3,6 +3,9 @@ import Layout from '../layouts/layout.astro'
 ---
 <Layout title="home" description="page overview and cool stuff">
 	<div class="center">
-		<iframe src="https://duckduckgo.com/search.html?width=250&prefill=Explore the web&focus=yes" style="" frameborder="0"></iframe>
+		<form method="get" id="ddgSearch" action="https://duckduckgo.com/">
+    			<input type="text" name="q" placeholder="Explore the web" aria-label="Search  on DuckDuckGo"/>
+    			<button type="submit">Enter</button>
+		</form>
 	</div>
 </Layout>
