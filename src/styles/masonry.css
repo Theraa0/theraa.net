@@ -3,8 +3,10 @@
 	height: auto;
 	border-radius: 4px;
 	margin-bottom: 8px;
+	outline: solid thin var(--color-link);
 }
 .masonry-element img {
+	display: block;
 	border-radius: 4px;
 	width: 100%;
 	height: auto;
