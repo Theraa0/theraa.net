@@ -93,6 +93,16 @@ li {
    text-indent: 1ch;
 }
 
+/* Tables */
+th {
+	text-align: left;
+}
+td {
+  /* border-collapse: collapse; */
+	padding-right: 1em;
+
+}
+
 /* Header */
 .skipToMain {
 	position: absolute;
