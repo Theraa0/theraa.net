@@ -13,14 +13,16 @@
 
 /* Color Schemes */
 :root {
-	--color-main: black;
-	--color-link: #f00;
-	--color-background: white;
+	--color-dark: #0e1012;
+	--color-light: #f3efe2;
+	--color-main: var(--color-dark);
+	--color-background: var(--color-light);
+	--color-link: #ff1447;
 }
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-main: white;
-		--color-background: black;
+		--color-background: var(--color-dark);
+		--color-main: var(--color-light);
 	}
 }
 
@@ -35,7 +37,8 @@ body {
 	tab-size: 4;
 	color: var(--color-main);
 	margin: 0;
-	word-break: break-word;
+	/* dunno why this was here but it breaks table scrolling */
+	/* word-break: break-word; */
 }
 h1 {
 	font-weight: 800;
@@ -70,37 +73,34 @@ button:hover {
 	text-decoration: underline;
 }
 p {
-	/*margin: 0;*/
 	text-transform: lowercase;
 }
-/*p + p {
-	margin-top: 1em;
-}*/
 .center {
 	text-align: center;
 }
-/*ul + p {
-	margin-top: 1em;
-}*/
 ul {
-	list-style-type: "-";
+	list-style-type: "- ";
 	padding: 0;
-	margin: 0 0 0 1ch;
+	margin-left: 1em;
 }
 li {
-	margin-left: 1ch;
-   padding-left: 0;
-   text-indent: 1ch;
+	margin-left: 1em;
+	margin-bottom: 1em;
 }
 
 /* Tables */
 th {
 	text-align: left;
 }
-td {
-  /* border-collapse: collapse; */
-	padding-right: 1em;
-
+table, td, th {
+	border: 1px solid;
+	border-collapse: collapse;
+	padding: 0.5em 1em;
+}
+.table {
+	overflow-x: scroll;
+	scrollbar-color: var(--color-link) rgba(0, 0, 0, 0);
+	scrollbar-width: thin;
 }
 
 /* Header */
