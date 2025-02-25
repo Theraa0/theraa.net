@@ -13,11 +13,11 @@
 
 /* Color Schemes */
 :root {
-	--color-dark: #0e1012;
-	--color-light: #f3efe2;
+	--color-dark: #1d1f21;
+	--color-light: #ffffff;
 	--color-main: var(--color-dark);
 	--color-background: var(--color-light);
-	--color-link: #ff1447;
+	--color-link: #f1054c;
 }
 @media (prefers-color-scheme: dark) {
 	:root {
