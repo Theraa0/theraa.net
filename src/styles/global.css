@@ -88,6 +88,10 @@ li {
 	margin-bottom: 1em;
 }
 
+img {
+	max-width: 100%;
+	box-sizing: border-box;
+}
 /* Tables */
 th {
 	text-align: left;
@@ -101,6 +105,16 @@ table, td, th {
 	overflow-x: scroll;
 	scrollbar-color: var(--color-link) rgba(0, 0, 0, 0);
 	scrollbar-width: thin;
+}
+
+.sidecomp {
+	float: right;
+	clear: right;
+	min-width: 100px;
+	max-width: 20%;
+	margin: 0 0 1em 1em;
+	padding: 0.2em;
+	border: solid 1px white;
 }
 
 /* Header */
