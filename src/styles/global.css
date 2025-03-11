@@ -57,6 +57,7 @@ h4 {
 	font-size: 100%;
 }
 a {
+	display: inline-block;
 	color: var(--color-link);
 	text-decoration: none;
 }
@@ -120,8 +121,16 @@ table, td, th {
 a img {
 	outline: solid thin;
 }
+a:focus img {
+	outline: none;
+}
 
-/* Header */
+:focus {
+	box-shadow: none;
+	border-color: transparent !important;
+	outline: thin solid white;
+}
+/* Headeut sitemap readingr */
 .skipToMain {
 	position: absolute;
 	left: -10000px;
