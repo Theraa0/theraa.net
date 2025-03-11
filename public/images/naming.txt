@@ -1,0 +1,11 @@
+x y y . filetype
+
+| | |
+| | *- unique hex id in category
+| *--- "
+*----- category
+
+category:
+0	general purpose
+1	blog
+2	...
