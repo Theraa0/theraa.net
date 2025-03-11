@@ -12,6 +12,8 @@
 	margin-top: 10px;
 }
 img.button {
+	outline: none;
+	border: none;
 	image-rendering: pixelated;
 	image-rendering: -moz-crisp-edges;
 	image-rendering: crisp-edges;
