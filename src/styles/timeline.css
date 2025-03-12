@@ -1,9 +1,4 @@
-#now {
-	position: relative;
-}
 #now h2 {
-	line-height: 1.2em;
-	position: relative;
 	font-size: 1em;
 }
 #now h2::before {
@@ -12,14 +7,13 @@
 	height: 0.6em;
 	background-color: var(--color-main);
 	border-radius: 50%;
-	display: block;
 	position: absolute;
 	top: 0.4em;
 	left: -1.2em;
 }
 article {
 	position: relative;
-	margin-left: 2em;
+	margin-left: 1.65em;
 }
 article::before {
 	content: "";
