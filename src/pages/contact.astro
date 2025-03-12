@@ -5,18 +5,18 @@ import '../styles/contact.css'
 <Layout title="contact" description="links to my profiles on a lot of different social media platforms">
 		<p>This really is just as much an overview for you as it is for me cuz keep loosing track of all the accounts I have and this list is definetely not complete</p>
 		<div id="links">
-			<a class="button vip" href="https://www.instagram.com/theraa.0">Instagram</a>
-			<a class="button" href="https://bsky.app/profile/theraa0.bsky.social">Bluesky</a>
-			<a class="button" href="https://www.discord.com/users/@theraa">Discord</a>
-			<a class="button" href="https://github.com/Theraa0">GitHub</a>
-			<a class="button" href="https://youtube.com/@theraaaa">Youtube</a>
-			<a class="button" href="https://open.spotify.com/user/l%C3%B6we%2C?si=noVENUghSnODktsgMLyQNQ&nd=1&dlsi=21687328aaf84e82">Spotify</a>
-			<a class="button" href="https://archive.org/details/@theraa">Internet Archive</a>
-			<a class="button" href="https://steamcommunity.com/id/theraa/">Steam</a>
-			<a class="button" href="https://www.last.fm/user/Theracraft">last.fm</a>
-			<a class="button" href="https://myanimelist.net/profile/Theraa">MyAnimeList</a>
-			<a class="button" href="https://www.speedrun.com/users/Theraa">speedrun.com</a>
-			<a class="button vip" href="/rasmus.vcf">mail/phone</a>
+			<a class="big" href="https://www.instagram.com/theraa.0">Instagram</a>
+			<a class="big" href="/rasmus.vcf">mail/phone</a>
+			<a class="big" href="https://bsky.app/profile/theraa0.bsky.social">Bluesky</a>
+			<a class="big" href="https://www.discord.com/users/@theraa">Discord</a>
+			<a class="big" href="https://github.com/Theraa0">GitHub</a>
+			<a class="big" href="https://youtube.com/@theraaaa">Youtube</a>
+			<a class="big" href="https://open.spotify.com/user/l%C3%B6we%2C?si=noVENUghSnODktsgMLyQNQ&nd=1&dlsi=21687328aaf84e82">Spotify</a>
+			<a class="big" href="https://archive.org/details/@theraa">Internet Archive</a>
+			<a class="big" href="https://steamcommunity.com/id/theraa/">Steam</a>
+			<a class="big" href="https://www.last.fm/user/Theracraft">last.fm</a>
+			<a class="big" href="https://myanimelist.net/profile/Theraa">MyAnimeList</a>
+			<a class="big" href="https://www.speedrun.com/users/Theraa">speedrun.com</a>
 		</div>
 </Layout>
 <script>
@@ -26,7 +26,7 @@ for (var i = 0; i < links.length; i++) {
   var image = document.createElement("img");
   image.src = "https://icons.duckduckgo.com/ip2/" + links[i].hostname + ".ico";
   image.className = "ico-img";
-  image.alt = "Icon";
+  image.alt = "Icon of the following site";
   links[i].insertAdjacentElement("afterbegin", image);
 }
 </script>
