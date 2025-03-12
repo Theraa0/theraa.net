@@ -23,7 +23,7 @@ const allPages = await Astro.glob(['./*.astro', './cool/*.astro']);
 	}
 })(window, document, undefined);
 function addMyButton() {
-	//const addMyButton = '<a href="https://theraa.net/"><img src="https://theraa.net/myButtons/theraa-button-31.gif" width="88" height="31" alt="theraa.net"></a>';
+	//const addMyButton = '<a href="https://theraa.net/"><img src="/https://theraa.net/myButtons/theraa-button-31.gif" width="88" height="31" alt="theraa.net"></a>';
 	const addMyButton = document.getElementById("test").innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 	navigator.clipboard.writeText(addMyButton);
 }
@@ -31,7 +31,7 @@ function addMyButton() {
 <Layout title="home" description="page overview and cool stuff">
 	<div">
 	<div class="h-card">
-		<img class="u-photo" src="images/000.jpg" alt="a stack of old books in a antique store in bangalore" width="104" height="104"/>
+		<img class="u-photo" src="/images/000.jpg" alt="a stack of old books in a antique store in bangalore" width="104" height="104"/>
 		<span class="p-name">Rasmus</span>
 		<span class="p-nickname">Thera</span>
 		<a class="u-url" href="http://theraa.net"></a>
@@ -50,58 +50,58 @@ function addMyButton() {
 	<h1>Buttons</h1>
 	<div class="buttons center">
 		<a href="https://theanarchistlibrary.org/">
-			<img class="button" src="buttons/crushit.gif" width="88" height="31" alt="lets crush capitalism">
+			<img class="button" src="/buttons/crushit.gif" width="88" height="31" alt="lets crush capitalism">
 		</a>
 		<a href="https://www.mozilla.org/en-US/firefox/download/thanks/">
-			<img class="button" src="buttons/fftake.gif" width="88" height="31" alt="take back the web">
+			<img class="button" src="/buttons/fftake.gif" width="88" height="31" alt="take back the web">
 		</a>
 		<a href="https://www.kernel.org/linux.html">
-			<img class="button" src="buttons/penguins.gif" width="88" height="31" alt="powered by: penguins">
+			<img class="button" src="/buttons/penguins.gif" width="88" height="31" alt="powered by: penguins">
 		</a>
 		<a href="https://www.youtube.com/watch?v=NY__VTIUsiU">
-			<img class="button" src="buttons/miku.gif" width="88" height="31" alt="this site is miku approved">
+			<img class="button" src="/buttons/miku.gif" width="88" height="31" alt="this site is miku approved">
 		</a>
 		<a href="">
-			<img class="button" src="buttons/nocookie.gif" width="88" height="31" alt="This site is certified 100% cookie free!">
+			<img class="button" src="/buttons/nocookie.gif" width="88" height="31" alt="This site is certified 100% cookie free!">
 		</a>
 		<a href="https://www.vim.org/">
-			<img class="button" src="buttons/vim.vialle.love.anim.gif" width="88" height="31" alt="Edited with Vim">
+			<img class="button" src="/buttons/vim.vialle.love.anim.gif" width="88" height="31" alt="Edited with Vim">
 		</a>
 		<a href="https://home.cern/science/computing/birth-web/short-history-web">
-			<img class="button" src="buttons/wwwbuttonnew.gif" width="88" height="31" alt="WORLD WIDE WEB Connecting people Since 1991">
+			<img class="button" src="/buttons/wwwbuttonnew.gif" width="88" height="31" alt="WORLD WIDE WEB Connecting people Since 1991">
 		</a>
 		<a href="https://youtu.be/YQ_xWvX1n9g?si=srejvqNa1KdQ_oNb">
-			<img class="button" src="buttons/nfthanks.gif" width="88" height="31" alt="nft? no fucking thanks">
+			<img class="button" src="/buttons/nfthanks.gif" width="88" height="31" alt="nft? no fucking thanks">
 		</a>
 		<a href="https://youtu.be/dQw4w9WgXcQ?si=gd8pSYzuBsMjwuGO">
-			<img class="button" src="buttons/jollodotorg-defcon1.gif" width="88" height="31" alt="not secure">
+			<img class="button" src="/buttons/jollodotorg-defcon1.gif" width="88" height="31" alt="not secure">
 		</a>
 		<a href="">
-			<img class="button" src="buttons/monster-button.gif" width="88" height="31" alt="powered by monster energy">
+			<img class="button" src="/buttons/monster-button.gif" width="88" height="31" alt="powered by monster energy">
 		</a>
 		<a href="https://en.wikipedia.org/wiki/Eat_the_rich#Origin">
-			<img class="button" src="buttons/eattherich.gif" width="88" height="31" alt="eat the rich">
+			<img class="button" src="/buttons/eattherich.gif" width="88" height="31" alt="eat the rich">
 		</a>
 		<a href="https://www.w3schools.com/html">
-			<img class="button" src="buttons/learn-html.gif" width="88" height="31" alt="HTML, learn it today">
+			<img class="button" src="/buttons/learn-html.gif" width="88" height="31" alt="HTML, learn it today">
 		</a>
 		<a href="">
-			<img class="button" src="buttons/toostupid.gif" width="88" height="31" alt="too stupid to slep">
+			<img class="button" src="/buttons/toostupid.gif" width="88" height="31" alt="too stupid to slep">
 		</a>
 		<a href="https://archlinux.org/">
-			<img class="button" src="buttons/archbtw.gif" width="88" height="31" alt="i use arch btw">
+			<img class="button" src="/buttons/archbtw.gif" width="88" height="31" alt="i use arch btw">
 		</a>
 		<a href="https://myanimelist.net/anime/39792/Eizouken_ni_wa_Te_wo_Dasu_na">
-			<img class="button" src="buttons/eizouken.gif" width="88" height="31" alt="keep your hands off eizouken">
+			<img class="button" src="/buttons/eizouken.gif" width="88" height="31" alt="keep your hands off eizouken">
 		</a>
 		<a href="">
-			<img class="button" src="buttons/button-mobile.png" width="88" height="31" alt="mobile friendly">
+			<img class="button" src="/buttons/button-mobile.png" width="88" height="31" alt="mobile friendly">
 		</a>
 		<a href="https://smoothsailing.asclaria.org/">
-			<img class="button" src="buttons/microbutton.png" width="88" height="31" alt="smooth sailing">
+			<img class="button" src="/buttons/microbutton.png" width="88" height="31" alt="smooth sailing">
 		</a>
 		<a href="">
-			<img class="button" src="buttons/i_like_computer.png" width="88" height="31" alt="i like computer">
+			<img class="button" src="/buttons/i_like_computer.png" width="88" height="31" alt="i like computer">
 		</a>
 	</div>
 	<h2>
@@ -109,7 +109,7 @@ function addMyButton() {
 	</h2>
 	<div class="addMyButton">
 		<button onclick="addMyButton()" id="amb-button">
-			<img class="button" src="buttons/myButtons/theraa-button-41.gif" width="88" height="31" alt="theraa.net">
+			<img class="button" src="/buttons/myButtons/theraa-button-41.gif" width="88" height="31" alt="theraa.net">
 		</button>
 	</div>
 <pre id="amb-pre"><code id="test">&lta href="https://theraa.net/"&gt
