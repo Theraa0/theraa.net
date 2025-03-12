@@ -89,7 +89,7 @@ table, td, th {
 	border: thin solid;
 	border-collapse: collapse;
 }
-.table {
+.table, .overflow {
 	overflow-x: scroll;
 	scrollbar-color: var(--color-link) rgba(0, 0, 0, 0);
 	scrollbar-width: thin;
