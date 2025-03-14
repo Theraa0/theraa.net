@@ -107,6 +107,9 @@ table, td, th {
 	border-color: transparent !important;
 	outline: thin solid white;
 }
+.center {
+	text-align: center;
+}
 
 /* Header */
 .skipToMain {
@@ -122,18 +125,8 @@ table, td, th {
 header {
 	margin: 2em 0 1.5em 3em;
 }
-#header-main {
-	font-weight: 800;
-	margin: 0;
-}
-#header-title {
-	margin-left: 1ch;
-}
 #header-sub {
 	color: var(--color-link);
-}
-#header-tabs {
-	margin-top: 0.75em;
 }
 #header-tabs a {
 	padding-right: 1ch;
@@ -150,9 +143,6 @@ main {
 /* Footer */
 Footer {
 	margin: 2em auto 1em auto;
-}
-.center {
-	text-align: center;
 }
 /* Mobile Adjustments */
 @media (max-width: 600px) {
