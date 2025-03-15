@@ -3,20 +3,19 @@ import '../styles/global.css'
 const { title } = Astro.props;
 ---
 <script>
-const pathname = document.getElementById("header-sub").innerHTML;
 document.getElementById("header-sub").innerHTML = "";
-const path = pathname.split("/");
-for ( var i = 0; i < (path.length - 1); i++ ) {
+const path = window.location.pathname.replace(/\/$/g, "").split("/");
+for (var i=1; i < path.length; i++) {
 	const a = document.createElement("a");
-	for ( var ii = 0; ii < i + 2; ii++ ) {
-		a.href = a.href + path[ii] + "/";
+	for (var j=1; j <= i; j++) {
+		a.href= a.href + "/" + path[j];
 	}
-	a.innerText = "/" + path[i+1];
+	a.innerText = "/" + path[i];
 	document.getElementById("header-sub").appendChild(a);
 }
 </script>
 <h1 id="header-main"><span>theraa.net: </span><span id="header-title">{title}</span></h1>
-<p id="header-sub">{Astro.url.pathname}</p>
+<p id="header-sub">&#8203;</p>
 <div id="header-tabs">
 	<a id="home" href="/home">home</a>
 	<a id="about" href="/about">about</a>
