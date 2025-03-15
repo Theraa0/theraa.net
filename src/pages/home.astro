@@ -4,6 +4,7 @@ import '../styles/home.css'
 const allPages = await Astro.glob(['./*.astro', './cool/*.astro']);
 ---
 <script is:inline>
+<!-- Align sitemap items -->
 (function(window, document, undefined) {
 	window.onload = init;
 	function init(){
@@ -18,11 +19,12 @@ const allPages = await Astro.glob(['./*.astro', './cool/*.astro']);
 			} else {
 				children[i].style.width = column_width + "px";
 			}
+			children[i].style.marginRight = "0";
 		}
 	}
 })(window, document, undefined);
+<!-- Add functionality to the amb button -->
 function addMyButton() {
-	//const addMyButton = '<a href="https://theraa.net/"><img src="/https://theraa.net/myButtons/theraa-button-31.gif" width="88" height="31" alt="theraa.net"></a>';
 	const addMyButton = document.getElementById("test").innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 	navigator.clipboard.writeText(addMyButton);
 }
@@ -40,7 +42,7 @@ function addMyButton() {
 	<p>I'm always taking suggestions for new content on here, just let me know if you have an idea.</p>
 	<p>Please take a look arround, the best place to start is the <a href="#sitemap" class="isSectionLink">sitemap</a></p>
 	<h1 id="sitemap-heading">Sitemap</h1>
-	<p id="sitemap-info">This will eventually become its own page but for now there really aren't enough pages to justify that. Also the layout is fucked, pls ignore</p>
+	<p id="sitemap-info">This will eventually become its own page but for now there really aren't enough pages to justify that.</p>
 	<div id="sitemap">
 		{allPages.map((page) => <a href={page.url}>{page.url}</a>)}
 	</div>
