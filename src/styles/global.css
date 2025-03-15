@@ -86,7 +86,7 @@ td, th {
 	padding: 0.5em;
 }
 table, td, th {
-	border: thin solid;
+	border: thin solid transparent;
 	border-collapse: collapse;
 }
 .table, .overflow {
