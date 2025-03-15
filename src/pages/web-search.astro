@@ -2,11 +2,46 @@
 import Layout from '../layouts/layout.astro'
 import '../styles/web-search.css'
 ---
+<script>
+(function () {
+
+  var clockElement = document.getElementById( "clock-text" );
+
+  function updateClock ( clock ) {
+	  clock.innerHTML = new Date().toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'});
+  }
+
+  setInterval(function () {
+      updateClock( clockElement );
+  }, 1000);
+
+}());
+
+var links = document.getElementById("shortcuts").getElementsByTagName("a")
+var icons = []
+for (var i = 0; i < links.length; i++) {
+  var image = document.createElement("img");
+  image.src = "https://icons.duckduckgo.com/ip2/" + links[i].hostname + ".ico";
+  image.className = "ico-img";
+  image.alt = "Icon of the following site";
+  links[i].insertAdjacentElement("afterbegin", image);
+}
+</script>
 <Layout title="home" description="page overview and cool stuff">
-	<div class="center-all">
-		<form method="get" class="ddg-search" action="https://duckduckgo.com/">
-    			<input class="search-input" type="text" name="q" placeholder="Explore the web" aria-label="Search  on DuckDuckGo" autofocus></input>
-    			<button class="search-button" type="submit">Enter</button>
-		</form>
+	<div class="web-home">
+		<div id="clock"><p id="clock-text">00:00</p></div>
+		<div id="weather"><p>weather here maybe</p></div>
+		<div id="ddg-search">
+			<form method="get" id="ddg-search-form" action="https://duckduckgo.com/">
+				<input class="search-input" type="text" name="q" placeholder="Explore the web" aria-label="Search  on DuckDuckGo" autofocus></input>
+				<button class="search-button" type="submit">Enter</button>
+			</form>
+		</div>
+		<div id="shortcuts">
+			<a href="https://klips2.uni-koeln.de/"><span class="shortcut-name">klips 2.0</span></a>
+			<a href="https://www.ilias.uni-koeln.de/ilias/login.php"><span class="shortcut-name">ilias</span></a>
+			<a href="https://mail.google.com"><span class="shortcut-name">gmail</span></a>
+			<a href="https://youtube.com"><span class="shortcut-name">youtube</span></a>
+		<div>
 	</div>
 </Layout>
