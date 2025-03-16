@@ -16,11 +16,42 @@
 }
 #clock-text{
 	margin: 0;
+	padding: 1rem;
 }
 
 #weather {
 	grid-row: 1;
 	grid-column: 3 / span 3;
+	& p {
+		margin: 0;
+	}
+	border: solid thin;
+	border-radius: 8px;
+	padding: 1em;
+}
+#weather-top {
+	display: flex;
+	flex-flow: row;
+	justify-content: bottom;
+}
+#weather-minmax {
+	align-content: end;
+}
+.wicon {
+	height: 3rem;
+}
+.wh {
+	border-radius: 4px;
+	padding: 1rem;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	& .time {
+		color: rgba(255,255,255,0.2);
+	}
+	& .temp {
+		font-weight: 800;
+	}
 }
 
 #ddg-search {

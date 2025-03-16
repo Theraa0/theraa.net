@@ -3,34 +3,134 @@ import Layout from '../layouts/layout.astro'
 import '../styles/web-search.css'
 ---
 <script>
-(function () {
+	(function () {
 
-  var clockElement = document.getElementById( "clock-text" );
+		var clockElement = document.getElementById( "clock-text" );
 
-  function updateClock ( clock ) {
-	  clock.innerHTML = new Date().toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'});
-  }
+		function updateClock ( clock ) {
+			clock.innerHTML = new Date().toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'});
+		}
 
-  setInterval(function () {
-      updateClock( clockElement );
-  }, 1000);
+		setInterval(function () {
+			updateClock( clockElement );
+		}, 1000);
 
-}());
 
-var links = document.getElementById("shortcuts").getElementsByTagName("a")
-var icons = []
-for (var i = 0; i < links.length; i++) {
-  var image = document.createElement("img");
-  image.src = "https://icons.duckduckgo.com/ip2/" + links[i].hostname + ".ico";
-  image.className = "ico-img";
-  image.alt = "Icon of the following site";
-  links[i].insertAdjacentElement("afterbegin", image);
-}
+	}());
+
+	//weather code
+	const codeTable = {
+		"0": "clear",
+		"1": "clear",
+		"2": "cloudy",
+		"3": "cloudy",
+		"45": "fog",
+		"48": "fog",
+		"51": "rain_light",
+		"53": "rain_light",
+		"55": "rain",
+		"56": "rain",
+		"57": "rain",
+		"61": "rain_light",
+		"63": "rain_light",
+		"65": "rain_light",
+		"66": "rain_light",
+		"67": "rain_light",
+		"71": "snow",
+		"73": "snow",
+		"75": "snow",
+		"77": "snow",
+		"80": "rain_light",
+		"81": "rain",
+		"82": "rain",
+		"85": "snow",
+		"86": "snow",
+		"95": "thunder",
+		"96": "thunder",
+		"99": "thunder",
+	}
+	const coder = (code) => codeTable[code] || "invalid";
+	function dncoder(code, is_day) {
+		const tcode = coder(code);
+		var dcode = "";
+		const switches = ["clear", "rain"];
+		if (switches.includes(tcode)) {
+			if (is_day == 0) {
+				dcode = "_night";
+			} else {
+				dcode = "_day"
+			}
+		}
+		return tcode + dcode;
+	}
+
+	const xhr = new XMLHttpRequest();
+	const token = "b79f7b446371e39ea92018d4c603e78e"
+	const url = "https://api.open-meteo.com/v1/forecast?latitude=50.9333&longitude=6.95&daily=temperature_2m_min,temperature_2m_max&hourly=temperature_2m,is_day,weather_code&timezone=Europe%2FBerlin&forecast_days=1&timeformat=unixtime&forecast_hours=6"
+	xhr.open("GET", url);
+	xhr.send();
+	xhr.onload = () =>{
+		const data = JSON.parse(xhr.response);
+		console.log(data);
+		document.getElementById("max").innerHTML = "max: " + Math.round(data.daily.temperature_2m_max[0]) + "°";
+		document.getElementById("min").innerHTML = "min: " + Math.round(data.daily.temperature_2m_min[0]) + "°";
+		for (var i = 0; i < document.getElementsByClassName("wh").length; i++) {
+			const spantime = document.getElementsByClassName("wh")[i].getElementsByClassName("time")[0];
+			const nowDate = new Date();
+			const vardate = new Date(nowDate.getTime() + (i+1) * 60 * 60 * 1000);
+			spantime.innerHTML = vardate.toLocaleTimeString("en-GB", {hour: "2-digit"});
+
+			const spantemp = document.getElementsByClassName("wh")[i].getElementsByClassName("temp")[0];
+			spantemp.innerHTML = Math.round(data.hourly.temperature_2m[i+1]) + "°";
+
+			const wicon = document.getElementsByClassName("wh")[i].getElementsByClassName("wicon")[0];
+			wicon.src = "/images/wicons/" + dncoder(data.hourly.weather_code[i+1], data.hourly.is_day[i+1]) + ".png";
+		}
+		const lastupdate = document.getElementById("lastupdate");
+		lastupdate.innerHTML = "last update: " + new Date().toLocaleTimeString("de-DE", {hour: '2-digit', minute:'2-digit'});
+	};
+
+	//end of weather code
+
+	var links = document.getElementById("shortcuts").getElementsByTagName("a")
+	var icons = []
+	for (var i = 0; i < links.length; i++) {
+		var image = document.createElement("img");
+		image.src = "https://icons.duckduckgo.com/ip2/" + links[i].hostname + ".ico";
+		image.className = "ico-img";
+		image.alt = "Icon of the following site";
+		links[i].insertAdjacentElement("afterbegin", image);
+	}
 </script>
 <Layout title="home" description="page overview and cool stuff">
 	<div class="web-home">
 		<div id="clock"><p id="clock-text">00:00</p></div>
-		<div id="weather"><p>weather here maybe</p></div>
+		<div id="weather">
+			<div id="weather-top">
+				<div id="weather-minmax">
+					<p id="max">max: 11°</p>
+					<p id="min">min: 2°</p>
+				</div>
+				<div class="wh">
+					<img src="/images/wicons/thunder.png" class="wicon">
+					<p><span class="time">8pm</span> <span class="temp">9°</span></p>
+				</div>
+				<div class="wh">
+					<img src="/images/wicons/rain.png" class="wicon">
+					<p><span class="time">8pm</span> <span class="temp">9°</span></p>
+				</div>
+				<div class="wh">
+					<img src="/images/wicons/cloudy.png" class="wicon">
+					<p><span class="time">8pm</span> <span class="temp">9°</span></p>
+				</div>
+				<div class="wh">
+					<img src="/images/wicons/cloudy.png" class="wicon">
+					<p><span class="time">8pm</span> <span class="temp">9°</span></p>
+				</div>
+			</div>
+			<p>location: Köln</p>
+			<p id="lastupdate">last update: 15:00</p>
+		</div>
 		<div id="ddg-search">
 			<form method="get" id="ddg-search-form" action="https://duckduckgo.com/">
 				<input class="search-input" type="text" name="q" placeholder="Explore the web" aria-label="Search  on DuckDuckGo" autofocus></input>
