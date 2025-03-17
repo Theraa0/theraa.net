@@ -1,29 +1,25 @@
 ---
 import Layout from '../layouts/layout.astro'
 import '../styles/home.css'
-const allPages = await Astro.glob(['./*.astro', './cool/*.astro']);
+const allPages = Object.values(import.meta.glob('./*.astro', { eager: true }));
 ---
 <script is:inline>
-<!-- Align sitemap items -->
 (function(window, document, undefined) {
 	window.onload = init;
 	function init(){
-		const body_width = document.getElementById("sitemap").offsetWidth;
-		const min_width = 90;
-		const columns = Math.floor(body_width / min_width);
-		const column_width = body_width/columns;
-		const children = document.getElementById("sitemap").children;
-		for (var i = 0; i < children.length; i++) {
-			if(children[i].offsetWidth > column_width) {
-				children[i].style.width = column_width * 2 + "px";
-			} else {
-				children[i].style.width = column_width + "px";
+		const links = document.getElementById("sitemap").childNodes;
+		console.log(links.length)
+		for ( var i=1; i < links.length; i++ ) {
+			console.log(i)
+			if (links[i].innerHTML.length > 8) {
+				links[i].style.gridColumn = "span 2";
 			}
-			children[i].style.marginRight = "0";
 		}
 	}
+
 })(window, document, undefined);
-<!-- Add functionality to the amb button -->
+
+//Add functionality to the amb button
 function addMyButton() {
 	const addMyButton = document.getElementById("test").innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 	navigator.clipboard.writeText(addMyButton);
@@ -44,7 +40,7 @@ function addMyButton() {
 	<h1 id="sitemap-heading">Sitemap</h1>
 	<p id="sitemap-info">This will eventually become its own page but for now there really aren't enough pages to justify that.</p>
 	<div id="sitemap">
-		{allPages.map((page) => <a href={page.url}>{page.url}</a>)}
+		{allPages.map((page) => (<a href={page.url}>{page.url}</a>))}
 	</div>
 	<h1>Buttons</h1>
 	<div class="buttons center">
