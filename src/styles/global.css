@@ -103,14 +103,23 @@ table, td, th {
 	padding: 0.2em;
 	border: thin solid white;
 }
-:focus {
-	border-color: transparent !important;
-	outline: thin solid white;
-}
 .center {
 	text-align: center;
 }
-
+a:focus {
+  outline: none !important;
+  color: var(--color-background);
+  background-color: var(--color-main);
+}
+a:focus {
+  & > img {
+    outline: solid thin var(--color-link) !important;
+  }
+}
+::selection {
+  color: var(--color-main);
+  background-color: var(--color-link);
+}
 /* Header */
 .skipToMain {
 	position: absolute;
