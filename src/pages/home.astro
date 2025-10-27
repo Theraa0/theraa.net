@@ -4,6 +4,7 @@ import '../styles/home.css'
 const allPages = Object.values(import.meta.glob('./*.astro', { eager: true }));
 ---
 <script is:inline>
+//This should be responsible for adding sitemap entries
 (function(window, document, undefined) {
 	window.onload = init;
 	function init(){
@@ -25,6 +26,7 @@ function addMyButton() {
 	navigator.clipboard.writeText(addMyButton);
 }
 </script>
+
 <Layout title="home" description="page overview and cool stuff">
 	<div class="h-card">
 		<img class="u-photo" src="/images/000.jpg" alt="a stack of old books in a antique store in bangalore" width="104" height="104"/>
@@ -34,11 +36,9 @@ function addMyButton() {
 		<a class="u-email" href="mailto:theraa@duck.com" rel="me">theraa@duck.com</a>
 		<time class="dt-bday" datetime="2005-08-31">31.08.2005</time>
 	</div>
-	<p>Hi, I'm Thera, welcome to my site! I'm still really not the most experiened with web dev, but you'll manage! This site is a lot of things but between other things I'm <a href="books">writing my opinions on books</a>, <a href="/about">maintaining a now page</a>, and learning about the web.</p>
-	<p>I'm always taking suggestions for new content on here, just let me know if you have an idea.</p>
+	<p>Hi! This site is a lot of things but between other things I'm <a href="books">writing my opinions on books</a>, <a href="/about">maintaining a now page</a>, and learning about the web.</p>
 	<p>Please take a look arround, the best place to start is the <a href="#sitemap" class="isSectionLink">sitemap</a></p>
 	<h1 id="sitemap-heading">Sitemap</h1>
-	<p id="sitemap-info">This will eventually become its own page but for now there really aren't enough pages to justify that.</p>
 	<div id="sitemap">
 		{allPages.map((page) => (<a href={page.url}>{page.url}</a>))}
 	</div>
