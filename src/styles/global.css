@@ -124,6 +124,7 @@ a:focus {
 	position: absolute;
 	z-index: 2;
 	left: -10000px;
+	top: 0;
 }
 .skipToMain:focus {
 	left: 0;
