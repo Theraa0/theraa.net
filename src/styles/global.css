@@ -44,7 +44,6 @@ h2 {
 	font-size: 150%;
 }
 a {
-	display: inline-block;
 	color: var(--color-link);
 	text-decoration: none;
 	&:hover {
@@ -123,13 +122,11 @@ a:focus {
 /* Header */
 .skipToMain {
 	position: absolute;
+	z-index: 2;
 	left: -10000px;
-	top: auto;
-	overflow: hidden;
 }
 .skipToMain:focus {
 	left: 0;
-	top: 0;
 }
 header {
 	padding: 2em 0 1.5em 3em;
