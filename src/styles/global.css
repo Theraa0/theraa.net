@@ -80,15 +80,22 @@ img {
 	max-width: 100%;
 	box-sizing: border-box;
 }
+/* tables */
 td, th {
-	text-align: left;
 	padding: 0.5em;
 }
-table, td, th {
-	border: thin solid transparent;
-	border-collapse: collapse;
+th:nth-child(1), td:nth-child(1) {
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	text-align: right;
 }
-.table, .overflow {
+table, tr, td, th {
+	border: none;
+	border-collapse: collapse;
+	text-align: left;
+	vertical-align: top;
+}
+table, .overflow {
 	overflow-x: scroll;
 	scrollbar-color: var(--color-link) rgba(0, 0, 0, 0);
 	scrollbar-width: thin;
