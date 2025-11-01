@@ -5,11 +5,11 @@ import '../styles/books.css'
 <style>
 </style>
 <tr>
+	<td><a href={book.url}>{book.frontmatter.title}</a></td>
 	<td class="removable">{new Date(book.frontmatter.finished).toLocaleDateString('de-de', {
 		year: 'numeric',
 		month: 'numeric',
 		day: 'numeric',
 	})}</td>
-	<td><a href={book.url}>{book.frontmatter.title}</a></td>
 	<td>{book.frontmatter.rating}/5 — {book.frontmatter.short}</td>
 </tr>
