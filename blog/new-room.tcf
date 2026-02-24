@@ -1,6 +1,6 @@
 ---
-import Layout from '../../layouts/layout.astro'
-import '../../styles/blogpost.css'
+layout = "layout.astro"
+style = ["blogpost.astro"]
 ---
 <Layout title="new room new room" description="i have a new room and its a mess">
 	<p class="date">mar 10, 2025</p>
