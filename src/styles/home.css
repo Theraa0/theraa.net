@@ -10,7 +10,7 @@
 	padding: 0.5em;
 	float: right;
 	margin: 0 0 2em 2em;
-	border: thin solid;
+	/* border: thin solid; */
 }
 .u-photo {
 	max-height: 6.5em;
