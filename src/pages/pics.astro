@@ -3,7 +3,9 @@ import Layout from '../layouts/layout.astro'
 import Masonry from '../components/masonry.astro'
 import { Image } from 'astro:assets'
 
-const images = await Astro.glob('../../public/images/memes/*');
+const images = Object.values(
+  import.meta.glob('../../public/images/memes/*', { eager: true })
+);
 ---
 <Layout title="pics test" description="temp; pls ignore">
 <p>I made this page to develop my new masonry image component, but I dont actually have any relevant images to display yet. This site will stay up for a while so I don't forget how it works.</p>
