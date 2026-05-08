@@ -6,7 +6,7 @@ export interface Props {
   title: string;
   description: string;
 }
-const { description, title }: Props = Astro.props;
+const { description, title, lastModified }: Props = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,7 @@ const { description, title }: Props = Astro.props;
 	<main id="main">
 		<slot />
 	</main>
-	<footer class="center"><Footer /></footer>
+	<footer class="center"><Footer lastModified={lastModified}></Footer></footer>
 </body>
 </html> 
 <script is:inline>

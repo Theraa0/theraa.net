@@ -2,6 +2,7 @@
 import Layout from '../layouts/layout.astro'
 import '../styles/home.css'
 const allPages = Object.values(import.meta.glob('./*.astro', { eager: true }));
+const lastModified = "09.05.2026"
 ---
 <script is:inline>
 //This should be responsible for adding sitemap entries
@@ -27,7 +28,7 @@ function addMyButton() {
 }
 </script>
 
-<Layout title="home" description="page overview and cool stuff">
+<Layout title="home" description="page overview and cool stuff" lastModified={lastModified}>
 	<div class="h-card">
 		<img class="u-photo" src="/images/000.jpg" alt="a stack of old books in a antique store in bangalore" width="104" height="104"/>
 		<span class="p-name">Rasmus</span>

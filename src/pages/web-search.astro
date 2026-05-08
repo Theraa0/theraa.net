@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/layout.astro'
 import '../styles/web-search.css'
+const lastModified = ""
 ---
 <script>
 	(function () {
@@ -102,7 +103,7 @@ import '../styles/web-search.css'
 		links[i].insertAdjacentElement("afterbegin", image);
 	}
 </script>
-<Layout title="home" description="page overview and cool stuff">
+<Layout title="home" description="page overview and cool stuff" lastModified={lastModified}>
 	<div class="web-home">
 		<div id="clock"><p id="clock-text">00:00</p></div>
 		<div id="weather">

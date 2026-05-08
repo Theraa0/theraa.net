@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/layout.astro'
 import '../styles/music.css'
+const lastModified = ""
 ---
 <script>
 const apiUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=theracraft&api_key=b7d11a24486dd9d1e6d0076602abf245&format=json&period=3month&limit=36'
@@ -30,7 +31,7 @@ fetch(apiUrl)
 		console.error('Error:', error);
 	});
 </script>
-<Layout title="music" description="this is apparently the music i listen to the most">
+<Layout title="music" description="this is apparently the music i listen to the most" lastModified={lastModified}>
 <p>Here u can find a bunch of my supposed "Top Albums" on <a href="https://www.last.fm">last.fm</a>, tho these aren't actually fully representative cuz of various reasons</p>
 <div id="covers"></div>
 <!-- If broken, check if last.fm even has data -->

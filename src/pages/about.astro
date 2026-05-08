@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/layout.astro'
 import '../styles/timeline.css'
+const lastModified = "09.05.2026"
 ---
-<Layout title="about" description="who am i and what am i doing on google?">
+<Layout title="about" description="who am i and what am i doing on google?" lastModified={lastModified}>
 	<a href="#aboutMe" class="isSectionLink">jump to about me</a>
 	<div id="now">
 		<h1>Now</h1>

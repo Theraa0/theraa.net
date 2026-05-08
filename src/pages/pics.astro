@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/layout.astro'
 import Masonry from '../components/masonry.astro'
+const lastModified = ""
 import { Image } from 'astro:assets'
 
 const images = Object.values(
   import.meta.glob('../../public/images/memes/*', { eager: true })
 );
 ---
-<Layout title="pics test" description="temp; pls ignore">
+<Layout title="pics test" description="temp; pls ignore" lastModified={lastModified}>
 <p>I made this page to develop my new masonry image component, but I dont actually have any relevant images to display yet. This site will stay up for a while so I don't forget how it works.</p>
 <p>At the time these were the first few images in my memes folder so do whatever you want with that information</p>
 <Masonry minWidth="120">
