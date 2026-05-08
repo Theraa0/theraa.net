@@ -2,7 +2,9 @@
 import Layout from '../layouts/layout.astro'
 import Listing from '../components/mdBookListing.astro'
 import '../styles/books.css';
-const allBooks = await Astro.glob('./books/*.md');
+const allBooks = Object.values(
+  import.meta.glob('./books/*.md', { eager: true })
+);
 const orderedBooks = allBooks.sort((a, b) => Date.parse(b.frontmatter.finished) - Date.parse(a.frontmatter.finished));
 ---
 </style>
