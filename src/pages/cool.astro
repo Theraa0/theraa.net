@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/layout.astro'
+const lastModified = "05.10.2026"
+---
+<style>
+.title {
+	font-weight: 800;
+}
+</style>
+<Layout title="cool" description="a collection of cool things i found" lastModified={lastModified}>
+	<h1>Entries</h1>
+	<ul>
+		<li><a href="./cool/sites"><span class="title">webpages</span><br><span>mostly cool personal pages but also other stuff, just check it out</span></a></li>
+		<li><a href="./cool/pommes"><span class="title">pommes</span><br><span>Wo gibt es in Köln gute Pommes?</span></a></li>
+	</ul>
+</Layout>
