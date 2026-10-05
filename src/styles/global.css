@@ -67,6 +67,9 @@ button {
 	&:hover {
 		text-decoration: underline;
 	}
+	&:active {
+		border: thin solid var(--color-main);
+	}
 }
 p {
 	text-transform: lowercase;
