@@ -1,0 +1,30 @@
+---
+import '../styles/global.css'
+import Layout from '../layouts/layout.astro'
+const { frontmatter } = Astro.props;
+---
+<style>
+span.capitalize {
+	text-transform: capitalize;
+}
+#metadata {
+	color: var(--color-accent);
+	margin-bottom: 1em;
+}
+#metadata p {
+	margin-top: 0;
+}
+</style>
+<Layout title={frontmatter.title}>
+	<h1><span class="capitalize">{frontmatter.title}</span><span>, by {frontmatter.author}</span></h1>
+	<div id="metadata">
+		<p>finished on: {new Date(frontmatter.finished).toLocaleDateString('en-us', {
+				year: 'numeric',
+				month: 'short',
+				day: 'numeric',
+		})}</p>
+		<p>my rating: {frontmatter.rating}/5</p>
+	</div>
+	<slot />
+</Layout>
+

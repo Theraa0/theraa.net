@@ -1,0 +1,30 @@
+#now h2 {
+	font-size: 1em;
+}
+#now h2::before {
+	content: "";
+	width: 0.6em;
+	height: 0.6em;
+	background-color: var(--color-main);
+	border-radius: 50%;
+	position: absolute;
+	top: 0.4em;
+	left: -1.2em;
+}
+article {
+	position: relative;
+	margin-left: 1.65em;
+}
+article::before {
+	content: "";
+	background-color: var(--color-main);
+	height: calc(100% + 1em);
+	width: 0.2em;
+	position: absolute;
+	display: block;
+	top: 0.5em;
+	left: -1em;
+}
+article:last-child::before {
+	display: none;
+}

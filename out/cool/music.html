@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>music - theraa.net</title>
+<meta name="description" content="some music i listen to, according to last.fm">
+<link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="theraa.net" />
+<link rel="manifest" href="/images/site.webmanifest" />
+<link rel="stylesheet" href="styles/global.css">
+<link rel="stylesheet" href="/styles/music.css">
+
+</head>
+<body>
+	<a href="#main" class="skipToMain">Skip to main</a>
+	<header>
+		<h1 id="header-main"><span>theraa.net: </span><span id="header-sub"></span></h1>
+		<div id="header-tabs">
+			<a id="home" href="/home">home</a>
+			<a id="about" href="/about">about</a>
+			<a href="/home#sitemap">sitemap</a>
+			<a id="reading" href="/books">reading</a>
+		</div>
+	</header>
+	<main id="main">
+		<script>
+const apiUrl = 'https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=theracraft&api_key=b7d11a24486dd9d1e6d0076602abf245&format=json&period=3month&limit=36'
+
+fetch(apiUrl)
+	.then(response => {
+		if (!response.ok) {
+			throw new Error('Network response was not ok');
+		}
+		return response.json();
+	})
+	.then(data => {
+		for (let i = 0; i < Object.keys( data.topalbums.album ).length; i++) {
+			let cover = document.createElement("img");
+			cover.src = data.topalbums.album[i].image[2]['#text'];
+			cover.alt = data.topalbums.album[i].name;
+			cover.classList.add("coverimage");
+			let link = document.createElement("a");
+			link.href = data.topalbums.album[i].url;
+			link.target = "_blank";
+			link.classList.add("coverlink");
+			link.appendChild(cover);
+			document.getElementById("covers").appendChild(link);
+		}
+	})
+	.catch(error => {
+		console.error('Error:', error);
+	});
+</script>
+<p>Here u can find a bunch of my supposed "Top Albums" on <a href="https://www.last.fm">last.fm</a>, tho these aren't actually fully representative cuz of various reasons</p>
+<div id="covers"></div>
+
+	</main>
+	<footer class="center">
+		<a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">CC BY-NC 4.0</a> 2024 Rasmus Metzger <a id="privacy" href="/privacy.html">data privacy</a> <a id="contact" href="/contact.html">contact</a> <a href="https://github.com/Theraa0/theraa.net">source</a>
+	</footer>
+</body>
+</html> 
+<script>
+// header stuff
+document.getElementById("header-sub").innerHTML = "";
+const path = window.location.pathname.replace(/\/$/g, "").split("/");
+for (var i=1; i < path.length; i++) {
+	const a = document.createElement("a");
+	for (var j=1; j <= i; j++) {
+		a.href= a.href + "/" + path[j];
+	}
+	a.innerText = "/" + path[i];
+	document.getElementById("header-sub").appendChild(a);
+//replace all isSectionLinks with buttons for semantics and fun
+scrollIntoView = function(destination) {
+}
+anchorToButton = function(link) {
+	var button = document.createElement("button");
+	button.innerHTML = link.innerHTML;
+	button.id = link.id;
+	for ( var i = 0; i < link.classList.length; i++ ) {
+		button.classList.add(link.classList[i]);
+	}
+	const destination = link.hash.replace("#", "");
+	//console.log(destination);
+	//button.onclick = function() { document.getElementById(destination).scrollIntoView({behaviour: "smooth"}); }
+	button.setAttribute("onclick", 'document.getElementById("' + destination + '").scrollIntoView({behavior: "smooth"})');
+	var linkParent = link.parentNode;
+	linkParent.replaceChild(button, link);
+}
+const sectionLinks = document.getElementsByClassName("isSectionLink");
+for ( var i = 0; i < sectionLinks.length; i++ ) {
+	anchorToButton( sectionLinks[i] );
+}
+//<button onclick="document.getElementById('sitemap-heading').scrollIntoView({behavior: 'smooth'})">sitemap</button>
+</script>

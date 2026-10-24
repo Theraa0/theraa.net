@@ -1,0 +1,10 @@
+.coverlink {
+	display: inline-block;
+	vertical-align: top;
+	width: 7em;
+	height: 7em;
+	margin: 0 1em 1em 0;
+}
+.coverimage {
+	display: block;
+}

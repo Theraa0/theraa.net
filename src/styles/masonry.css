@@ -1,0 +1,41 @@
+.masonry-element {
+	display: none;
+	height: auto;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	outline: solid thin var(--color-link);
+}
+.masonry-element img {
+	display: block;
+	border-radius: 4px;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+#initialElements {
+	width: 100%;
+}
+#masonry {
+	display: flex;
+	flex-flow: row;
+}
+#masonry:not(:first-child) {
+	margin-top: 1em;
+}
+.masonry-col {
+	height: fit-content;
+	display: flex;
+	flex-flow: column;
+	margin-right: 8px;
+}
+@media (scripting: none) {
+	#initialElements {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.masonry-element {
+		display: initial;
+		width: 10em;
+		object-fit: contain;
+	}
+}
