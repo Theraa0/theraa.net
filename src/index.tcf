@@ -2,19 +2,20 @@
 title: "home"
 description: "page overview and cool stuff"
 styles: ["home.css"]
+glob sitemap "*"
 ---
 <script>
 //this is for styling lol, keeps links in sitemap in the grid or smthn
 (function(window, document, undefined) {
 	window.onload = init;
 	function init(){
-		const links = document.getElementById("sitemap").childNodes;
+		const links = document.getElementById("sitemap").children;
 		console.log(links.length)
-		for ( var i=1; i < links.length; i++ ) {
-			console.log(i)
-			if (links[i].innerHTML.length > 8) {
-				links[i].style.gridColumn = "span 2";
-			}
+		for (let i = 0; i < links.length; i++) {
+			console.log(i);
+			const textLength = links[i].textContent.length;
+			const spanCount = Math.floor(textLength / 9) + 1;
+			links[i].style.gridColumn = `span ${spanCount}`;
 		}
 	}
 
@@ -39,7 +40,7 @@ function addMyButton() {
 <p>Please take a look arround, the best place to start is the <a href="#sitemap" class="isSectionLink">sitemap</a></p>
 <h1 id="sitemap-heading">Sitemap</h1>
 <div id="sitemap">
-	{map root="/"}
+	{sitemap.map(entry) => <a href="entry.url">entry.path</a>}
 </div>
 <h1>Buttons</h1>
 <div class="buttons center">

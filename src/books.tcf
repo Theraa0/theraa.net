@@ -2,19 +2,17 @@
 styles: ["books.css"]
 title: "reading"
 description: "an overview of a bunch of books ive read on it and my very qualified opinions on them"
+glob allBooks 'books/*'
 ---
-<!-- import Listing from '../components/mdBookListing.astro'
-const allBooks = await Astro.glob('./books/*.md');
-const orderedBooks = allBooks.sort((a, b) => Date.parse(b.frontmatter.finished) - Date.parse(a.frontmatter.finished)); -->
 <p>I will try to keep an archive of all the books I've read here, including a short review in order to be able to remember what I've thought about them, and to serve as a resource for you to maybe discover some interesting new books as well.</p>
 <h1>Books</h1>
 <div class="table">
-	<table>
+	<table class="sortable">
 		<tr>
 			<th>date</th>
 			<th>title</th>
 			<th>short</th>
 		</tr>
-		{orderedBooks.map((book) => <Listing book={book} />)}
+		{allBooks.map(book) => <tr><th>book.finished</th><th><a href="book.url">book.title</a></th><th>book.short</th></tr>}
 	</table>
 </div>

@@ -27,19 +27,20 @@
 		</div>
 	</header>
 	<main id="main">
-		<!-- import Listing from '../components/mdBookListing.astro'
-const allBooks = await Astro.glob('./books/*.md');
-const orderedBooks = allBooks.sort((a, b) => Date.parse(b.frontmatter.finished) - Date.parse(a.frontmatter.finished)); -->
-<p>I will try to keep an archive of all the books I've read here, including a short review in order to be able to remember what I've thought about them, and to serve as a resource for you to maybe discover some interesting new books as well.</p>
+		<p>I will try to keep an archive of all the books I've read here, including a short review in order to be able to remember what I've thought about them, and to serve as a resource for you to maybe discover some interesting new books as well.</p>
 <h1>Books</h1>
 <div class="table">
-	<table>
+	<table class="sortable">
 		<tr>
 			<th>date</th>
 			<th>title</th>
 			<th>short</th>
 		</tr>
-		{orderedBooks.map((book) => <Listing book={book} />)}
+		<tr><th>2024-08-23</th><th><a href="books/foundation-trilogy.html">The Foundation Trilogy</a></th><th>Really good worldbuilding, a catching narative, and quite clever even by todays standards</th></tr>
+<tr><th>2024-09-08</th><th><a href="books/how-do-you-live.html">how do you live?</a></th><th>A book that reads like an educational childrens book that I sadly wouldn't have enjoyed reading as a child.</th></tr>
+<tr><th>2025-03-14</th><th><a href="books/neuromancer.html">Neuromancer</a></th><th>Cyberpunk at its best, but still confusing af</th></tr>
+<tr><th>2024-08-10</th><th><a href="books/the-sleeper-awakes.html">the sleeper awakes</a></th><th>Interesting insight to what people thought the future might look like a hundred years ago</th></tr>
+
 	</table>
 </div>
 

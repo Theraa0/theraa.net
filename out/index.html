@@ -28,17 +28,17 @@
 	</header>
 	<main id="main">
 		<script>
-//This should be responsible for adding sitemap entries
+//this is for styling lol, keeps links in sitemap in the grid or smthn
 (function(window, document, undefined) {
 	window.onload = init;
 	function init(){
-		const links = document.getElementById("sitemap").childNodes;
+		const links = document.getElementById("sitemap").children;
 		console.log(links.length)
-		for ( var i=1; i < links.length; i++ ) {
-			console.log(i)
-			if (links[i].innerHTML.length > 8) {
-				links[i].style.gridColumn = "span 2";
-			}
+		for (let i = 0; i < links.length; i++) {
+			console.log(i);
+			const textLength = links[i].textContent.length;
+			const spanCount = Math.floor(textLength / 9) + 1;
+			links[i].style.gridColumn = `span ${spanCount}`;
 		}
 	}
 
@@ -63,7 +63,23 @@ function addMyButton() {
 <p>Please take a look arround, the best place to start is the <a href="#sitemap" class="isSectionLink">sitemap</a></p>
 <h1 id="sitemap-heading">Sitemap</h1>
 <div id="sitemap">
-	{allPages.map((page) => (<a href={page.url}>{page.url}</a>))}
+	<a href="index.html">index</a>
+<a href="404.html">404</a>
+<a href="about.html">about</a>
+<a href="blog.html">blog</a>
+<a href="books.html">books</a>
+<a href="contact.html">contact</a>
+<a href="pics.html">pics</a>
+<a href="privacy.html">privacy</a>
+<a href="cool/music.html">cool/music</a>
+<a href="cool/pommes.html">cool/pommes</a>
+<a href="cool/sites.html">cool/sites</a>
+<a href="books/foundation-trilogy.html">books/foundation-trilogy</a>
+<a href="books/how-do-you-live.html">books/how-do-you-live</a>
+<a href="books/neuromancer.html">books/neuromancer</a>
+<a href="books/the-sleeper-awakes.html">books/the-sleeper-awakes</a>
+<a href="blog/new-room.html">blog/new-room</a>
+
 </div>
 <h1>Buttons</h1>
 <div class="buttons center">
