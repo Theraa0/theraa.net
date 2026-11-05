@@ -1,6 +1,7 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/home", "permanent": true }
+    { "source": "/", "destination": "/home", "permanent": true },
+    { "source": "/fsr-26", "destination": "https://example.com/", "permanent": true }
   ],
   "cleanUrls": true
 }
